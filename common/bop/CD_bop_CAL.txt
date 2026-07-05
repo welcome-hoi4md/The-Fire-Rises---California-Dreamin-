@@ -1,0 +1,120 @@
+CAL_power_balance = {
+	initial_value = 0
+	left_side = CAL_militia_side
+	right_side = CAL_natguard_side
+	decision_category = CAL_balance_of_power_category
+
+	#Middle
+	range = {
+		id = CAL_middle_range
+		min = -0.08
+		max = 0.08
+		modifier = {
+			
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+	
+	#pro CSM side here
+	side = {
+		id = CAL_militia_side
+		icon = GFX_bop_CAL_militia
+		range = {
+			id = CAL_militia_total_control_range
+			min = -1
+			max = -0.77
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_militia_partial_control_range
+			min = -0.77
+			max = -0.54
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_militia_aligned_range
+			min = -0.54
+			max = -0.31
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_militia_leaning_range
+			min = -0.31
+			max = -0.08
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+	
+	#pro Natguard side here
+	side = {
+		id = CAL_natguard_side
+		icon = GFX_bop_PTF_trad #CHANGE LATER
+		range = {
+			id = CAL_natguard_total_control_range
+			min = 0.77
+			max = 1
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_natguard_partial_control_range
+			min = 0.54
+			max = 0.77
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_natguard_aligned_range
+			min = 0.31
+			max = 0.54
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+		range = {
+			id = CAL_natguard_leaning_range
+			min = 0.08
+			max = 0.31
+			modifier = {
+			}
+			on_activate = {
+			}
+			on_deactivate = {
+			}
+		}
+	}
+}

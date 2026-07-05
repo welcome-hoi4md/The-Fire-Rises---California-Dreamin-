@@ -1,0 +1,22 @@
+add_namespace = cd_cal
+add_namespace = cd_cal_news
+#Battle of San Jose
+country_event = {
+	id = cd_cal.1
+	title = cd_cal.1.t
+	desc = cd_cal.1.d
+	picture = GFX_report_san_jose
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_manpower = -1
+		}
+	}
+	option = {
+		name = cd_cal.1.a
+		effect_tooltip = {
+			add_manpower = -1
+		}
+	}
+}
