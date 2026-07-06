@@ -71,7 +71,7 @@ CAL_power_balance = {
 	#pro Natguard side here
 	side = {
 		id = CAL_natguard_side
-		icon = GFX_bop_PTF_trad #CHANGE LATER
+		icon = GFX_bop_CAL_natguard
 		range = {
 			id = CAL_natguard_total_control_range
 			min = 0.77
