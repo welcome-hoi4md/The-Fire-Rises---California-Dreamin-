@@ -133,6 +133,75 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = focus_federal_aid
+		icon = GFX_focus_CAL_federal_aid
+
+		x = 1
+		y = 4
+
+		cost = 4
+
+		prerequisite = { focus = focus_centralize_govt }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#GDP boost
+		}
+	}
+	focus = {
+		id = focus_mil_industry
+		icon = GFX_focus_CAL_mil_industry
+
+		x = 0
+		y = 5
+
+		cost = 4
+
+		prerequisite = { focus = focus_lockheed }
+		prerequisite = { focus = focus_federal_aid }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#mil factory
+		}
+	}
+	focus = {
+		id = focus_fight_gangs
+		icon = GFX_focus_CAL_fight_gangs
+
+		x = 2
+		y = 5
+
+		cost = 4
+
+		prerequisite = { focus = focus_crime_crackdown }
+		prerequisite = { focus = focus_federal_aid }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#give influence to republicans
+			#attack bonus against criminal warlords
+		}
+	}
+	focus = {
 		id = focus_af_expansion_act
 		icon = GFX_focus_CAL_af_expansion_act
 
@@ -141,7 +210,7 @@ focus_tree = {
 
 		cost = 4
 
-		prerequisite = { focus = focus_lockheed }
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
 		mutually_exclusive = { focus = focus_civ_industry }
 		
 		ai_will_do = {
@@ -152,6 +221,28 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			#airforce & military production buffs
+		}
+	}
+	focus = {
+		id = focus_civil_liberties
+		icon = GFX_focus_CAL_civil_liberties
+
+		x = 1
+		y = 6
+
+		cost = 4
+
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
+		mutually_exclusive = { focus = focus_anti_socialism }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
 		}
 	}
 	# Political Tree, Progressives
@@ -223,8 +314,8 @@ focus_tree = {
 		id = focus_enviro_regulate
 		icon = GFX_focus_CAL_enviro_regulate
 
-		x = -5
-		y = 6
+		x = -4
+		y = 5
 
 		cost = 4
 
@@ -238,6 +329,30 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			#progressive support shit
+		}
+	}
+	focus = {
+		id = focus_employ_engineers
+		icon = GFX_focus_CAL_employ_engineers
+
+		x = -2
+		y = 5
+
+		cost = 4
+
+		prerequisite = { focus = focus_support_unions }
+		prerequisite = { focus = focus_lockheed }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#progressive support shit
+			#democrat support
+			#GDP/econ boost
 		}
 	}
 	focus = {
@@ -283,6 +398,96 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			#give influence to republicans decisions
+		}
+	}
+	focus = {
+		id = focus_crime_crackdown
+		icon = GFX_focus_CAL_crime_crackdown
+
+		x = 3
+		y = 4
+
+		cost = 4
+
+		prerequisite = { focus = focus_republican_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change some political law
+		}
+	}
+	focus = {
+		id = focus_deregulate_industry
+		icon = GFX_focus_CAL_deregulate_industry
+
+		x = 5
+		y = 4
+
+		cost = 4
+
+		prerequisite = { focus = focus_republican_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change some economic law
+		}
+	}
+	focus = {
+		id = focus_cut_taxes
+		icon = GFX_focus_CAL_cut_taxes
+
+		x = 4
+		y = 5
+
+		cost = 4
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_anti_socialism
+		icon = GFX_focus_CAL_anti_socialism
+
+		x = 3
+		y = 6
+
+		cost = 4
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		mutually_exclusive = { focus = focus_civil_liberties }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#drops libsoc popularity
+			#civil liberties drop
 		}
 	}
 }
