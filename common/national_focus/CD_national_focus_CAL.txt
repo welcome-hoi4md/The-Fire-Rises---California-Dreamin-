@@ -1,4 +1,13 @@
+#focus tree refresher, change the text to refresh it!!!
 focus_tree = {
+	id = CAL
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CAL
+		}
+	}
 	focus = {
 		id = focus_stay_calm
 		icon = GFX_focus_CAL_calmdown
@@ -14,7 +23,7 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-			add_stability = 0.15
+			add_stability = -0.10
 			add_political_power = 50
 		}
 	}
@@ -30,12 +39,13 @@ focus_tree = {
 		prerequisite = { focus = focus_stay_calm }
 
 		completion_reward = {
-			add_war_support = 0.10
-			add_stability = -0.05
+			add_war_support = 0.5
+			add_stability = -0.02
 			set_power_balance = {
 				id = CAL_power_balance
 				left_side = CAL_militia_side
 				right_side = CAL_natguard_side
+				set_value = 0.10
 			}
 		}
 
@@ -56,8 +66,20 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 75
-			add_stability = 0.05
+			add_stability = 0.18
 			#government decision menu
+			set_temp_variable = {
+					coalition_partner_var_temp = token:social_democrat
+				}
+			add_to_coalition = yes
+			set_temp_variable = {
+					coalition_partner_var_temp = token:conservative
+				}
+			add_to_coalition = yes
+			set_temp_variable = {
+					coalition_partner_var_temp = token:social_liberal
+				}
+			add_to_coalition = yes
 		}
 
 		ai_will_do = {
@@ -77,10 +99,11 @@ focus_tree = {
 		prerequisite = { focus = focus_emergency_govt }
 
 		completion_reward = {
+			add_war_support = 0.10
+			# also attack bonuses n shit
 			country_event = {
 				id = cd_cal.1
 			}
-			# also attack bonuses n shit
 		}
 
 		ai_will_do = {
@@ -96,7 +119,7 @@ focus_tree = {
 		x = 0
 		y = 3
 
-		cost = 4
+		cost = 1
 
 		prerequisite = { focus = focus_start_offensive }
 		
@@ -117,7 +140,7 @@ focus_tree = {
 		x = -1
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_centralize_govt }
 		
@@ -139,7 +162,7 @@ focus_tree = {
 		x = 1
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_centralize_govt }
 		
@@ -161,10 +184,9 @@ focus_tree = {
 		x = 0
 		y = 5
 
-		cost = 4
+		cost = 2
 
-		prerequisite = { focus = focus_lockheed }
-		prerequisite = { focus = focus_federal_aid }
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
 		
 		ai_will_do = {
 			factor = 1
@@ -184,7 +206,7 @@ focus_tree = {
 		x = 2
 		y = 5
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_crime_crackdown }
 		prerequisite = { focus = focus_federal_aid }
@@ -208,7 +230,7 @@ focus_tree = {
 		x = -1
 		y = 6
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
 		mutually_exclusive = { focus = focus_civ_industry }
@@ -230,7 +252,7 @@ focus_tree = {
 		x = 1
 		y = 6
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
 		mutually_exclusive = { focus = focus_anti_socialism }
@@ -245,6 +267,34 @@ focus_tree = {
 			#political law change
 		}
 	}
+	focus = {
+		id = focus_unite_california_dems
+		icon = GFX_focus_CAL_unite_california_dems
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = social_liberal
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = social_liberal
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
 	# Political Tree, Progressives
 	focus = {
 		id = focus_socdem_negotiate
@@ -253,7 +303,7 @@ focus_tree = {
 		x = -4
 		y = 3
 
-		cost = 4
+		cost = 1
 
 		prerequisite = { focus = focus_start_offensive }
 		
@@ -274,7 +324,7 @@ focus_tree = {
 		x = -5
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_socdem_negotiate }
 		
@@ -295,7 +345,7 @@ focus_tree = {
 		x = -3
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_socdem_negotiate }
 		
@@ -317,7 +367,7 @@ focus_tree = {
 		x = -4
 		y = 5
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
 		
@@ -338,7 +388,7 @@ focus_tree = {
 		x = -2
 		y = 5
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_support_unions }
 		prerequisite = { focus = focus_lockheed }
@@ -362,7 +412,7 @@ focus_tree = {
 		x = -3
 		y = 6
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
 		mutually_exclusive = { focus = focus_af_expansion_act }
@@ -378,6 +428,56 @@ focus_tree = {
 			#consumer goods bonus
 		}
 	}
+	focus = {
+		id = focus_secessionists_left
+		icon = GFX_focus_CAL_secessionists_right
+
+		x = -5
+		y = 6
+		
+		cost = 2
+
+		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_unite_california_progressives
+		icon = GFX_focus_CAL_unite_california_unite_california_progressives
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = social_democrat
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = social_democrat
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
 	#Political Tree - Republicans
 	focus = {
 		id = focus_republican_negotiate
@@ -386,7 +486,7 @@ focus_tree = {
 		x = 4
 		y = 3
 
-		cost = 4
+		cost = 1
 
 		prerequisite = { focus = focus_start_offensive }
 		
@@ -407,7 +507,7 @@ focus_tree = {
 		x = 3
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_republican_negotiate }
 		
@@ -429,7 +529,7 @@ focus_tree = {
 		x = 5
 		y = 4
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_republican_negotiate }
 		
@@ -451,7 +551,7 @@ focus_tree = {
 		x = 4
 		y = 5
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
 		
@@ -473,7 +573,7 @@ focus_tree = {
 		x = 3
 		y = 6
 
-		cost = 4
+		cost = 2
 
 		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
 		mutually_exclusive = { focus = focus_civil_liberties }
@@ -488,6 +588,992 @@ focus_tree = {
 			#give influence to republicans
 			#drops libsoc popularity
 			#civil liberties drop
+		}
+	}
+	focus = {
+		id = focus_secessionists_right
+		icon = GFX_focus_CAL_secessionists_right
+
+		x = 5
+		y = 6
+		
+		cost = 2
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_unite_california_republicans
+		icon = GFX_focus_CAL_unite_california_unite_california_republicans
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = conservative
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = conservative
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	#Political Tree - Secessionists
+	focus = {
+		id = focus_unite_california_secessionists
+		icon = GFX_focus_CAL_unite_california_unite_california_secessionists
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		available = { 
+			OR = { 
+				has_government = libertarian_socialist 
+				has_government = authoritarian_democrat
+			} 
+		}
+		allow_branch = {
+			OR = {
+				has_government = libertarian_socialist
+				has_government = authoritarian_democrat
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_progressive_republic
+		icon = GFX_focus_CAL_progressive_republic
+
+		x = -1
+		y = 8
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_enshrine_environmental_regulations
+		icon = GFX_focus_CAL_enshrine_environment_regulations
+
+		x = -2
+		y = 9
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_progressive_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_progressive_leaders
+		icon = GFX_focus_CAL_progressive_leaders
+
+		x = -1
+		y = 10
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_enshrine_environmental_regulations
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = focus_nationalist_leaders
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the libsocs in power if you're authdem
+		}
+	}
+	focus = {
+		id = focus_CAL_constitutional_convention
+		icon = GFX_focus_CAL_enshrine_environment_regulations
+
+		x = 0
+		y = 9
+
+		cost = 5
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the libsocs in power if you're authdem
+		}
+	}
+	focus = {
+		id = focus_nationalist_republic
+		icon = GFX_focus_CAL_conservative_republic
+
+		x = 1
+		y = 8
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_enforce_national_identity
+		icon = GFX_focus_CAL_enforce_national_identity
+
+		x = 2
+		y = 9
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_nationalist_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = focus_nationalist_leaders
+		icon = GFX_focus_CAL_nationalist_leaders
+
+		x = 1
+		y = 10
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_enforce_national_identity
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = focus_progressive_leaders
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the authdems in power if you're libsoc
+		}
+	}
+	focus = {
+		id = focus_declare_independence
+		icon = GFX_focus_CAL_declare_independence
+
+		x = 0
+		y = 11
+
+		cost = 5
+
+		prerequisite = { 
+			focus = focus_nationalist_leaders
+			focus = focus_progressive_leaders
+		}
+		prerequisite = { 
+			focus = focus_CAL_constitutional_convention
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the authdems in power if you're libsoc
+		}
+	}
+	#Military Tree - Reunite Cali
+	focus = {
+		id = focus_defend_sacramento
+		icon = GFX_focus_CAL_defend_sacramento
+
+		x = 16
+		y = 3
+
+		cost = 1
+
+		prerequisite = { focus = focus_start_offensive }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			#manpower buffs
+			#defense buffs
+		}
+	}
+	focus = {
+		id = focus_cascades_offensive
+		icon = GFX_focus_CAL_cascades_offensive
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_LA_offensive }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_LA_offensive
+		icon = GFX_focus_CAL_LA_offensive
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_cascades_offensive }
+
+		x = 0
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_fortify_sierra_nevada
+		icon = GFX_focus_CAL_fortify_sierra_nevada
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_LA_crackdown focus = focus_cascades_offensive }
+		mutually_exclusive = { focus = focus_strike_apla_factories }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = focus_strike_apla_factories
+		icon = GFX_focus_CAL_strike_apla_factories
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_LA_offensive focus = focus_cascades_offensive }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_end_communist_insurgents
+		icon = GFX_focus_CAL_end_communist_insurgents
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_fortify_sierra_nevada focus = focus_strike_apla_factories }
+
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		}
+	}
+	#Military Tree - Militias V Natguard
+	focus = {
+		id = focus_create_mechanized
+		icon = GFX_focus_CAL_create_mechanized
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		x = -3
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_raise_militias
+		icon = GFX_focus_CAL_raise_militias
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+		mutually_exclusive = { focus = focus_create_mechanized }
+	
+		x = -7
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_shock_militias
+		icon = GFX_focus_CAL_shock_militias
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_raise_militias focus = focus_create_mechanized }
+		mutually_exclusive = { focus = focus_abandon_rangers }
+	
+		x = -6
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_abandon_rangers
+		icon = GFX_focus_CAL_abandon_rangers
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_raise_militias focus = focus_create_mechanized }
+		mutually_exclusive = { focus = focus_shock_militias }
+	
+		x = -4
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_organize_militias
+		icon = GFX_focus_CAL_organize_militias
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_shock_militias focus = focus_abandon_rangers }
+	
+		x = -5
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#organization & mp buffs
+		}
+	}
+	focus = {
+		id = focus_tank_offensive
+		icon = GFX_focus_CAL_tank_offensive
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_create_mechanized }
+	
+		x = -3
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#gives tanks
+		#buffs tanks
+		}
+	}focus = {
+		id = focus_talks_with_wagner
+		icon = GFX_focus_CAL_talks_with_wagner
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_raise_militias }
+	
+		x = -7
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#spawns russian special forces divisions
+		}
+	}
+	focus = {
+		id = focus_partisan_warfare
+		icon = GFX_focus_CAL_partisan_warfare
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_talks_with_wagner focus = focus_organize_militias}
+		
+		mutually_exclusive = { focus = focus_traditional_warfare }
+	
+		x = -6
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_traditional_warfare
+		icon = GFX_focus_CAL_traditional_warfare
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_tank_offensive focus = focus_organize_militias}
+		
+		mutually_exclusive = { focus = focus_partisan_warfare }
+	
+		x = -4
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_combined_arms_doctrine
+		icon = GFX_focus_CAL_combined_arms_doctrine
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_tank_offensive }
+	
+		x = -2
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_shock_and_awe
+		icon = GFX_focus_CAL_shock_and_awe
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_talks_with_wagner }
+	
+		x = -8
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_finish_military_reform
+		icon = GFX_focus_CAL_finish_military_reform
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_shock_and_awe focus = focus_combined_arms_doctrine focus = focus_traditional_warfare focus = focus_partisan_warfare }
+	
+		x = -5
+		y = 5
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	#Military Tree, reunifying america
+	focus = {
+		id = focus_state_faction
+		icon = GFX_focus_CAL_state_faction
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_separatist_faction }
+
+		x = 2
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#forms the Federal State Alliance
+		}
+	}
+	focus = {
+		id = focus_separatist_faction
+		icon = GFX_focus_CAL_state_faction
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_state_faction }
+
+		x = 4
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#forms the Pacific Separatist League
+		}
+	}
+	focus = {
+		id = focus_expand_north
+		icon = GFX_focus_CAL_expand_north
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_separatist_faction focus = focus_state_faction }
+
+		x = 3
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_aid_other_states
+		icon = GFX_focus_CAL_expand_north
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_expand_north }
+
+		mutually_exclusive = { focus = focus_aid_other_separatists }
+
+		x = 2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_choose_acw_side
+		icon = GFX_focus_CAL_choose_acw_side
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_aid_other_states }
+
+		mutually_exclusive = { focus = focus_aid_other_separatists }
+
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_aid_other_separatists
+		icon = GFX_focus_CAL_expand_north
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_expand_north }
+
+		mutually_exclusive = { focus = focus_aid_other_states }
+
+		x = 4
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#Military Tree - chosen government gets capped
+	focus = {
+		id = focus_fed_died
+		icon = GFX_focus_CAL_fed_died
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_defend_sacramento }
+		#also requires you to choose a side and that sides government falls
+		#auto completes if your chosen side capps
+
+		x = 6
+		y = 0
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#nun much
+		}
+	}
+	focus = {
+		id = focus_declare_successor
+		icon = GFX_focus_CAL_declare_successor
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_fed_died }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#renames FSA to Sacramento Government
+		}
+	}
+	focus = {
+		id = focus_rally_states
+		icon = GFX_focus_CAL_declare_successor
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_fed_died }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#expansion decisions
+		}
+	}
+	focus = {
+		id = focus_prepare_conquests
+		icon = GFX_focus_CAL_prepare_conquests
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_declare_successor }
+		prerequisite = { focus = focus_rally_states }
+
+		x = 0
+		y = 2
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_trump_offensive
+		icon = GFX_focus_CAL_trump_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_prepare_conquests focus = focus_aid_other_separatists }
+
+		mutually_exclusive = { focus = focus_defend_the_west }
+		
+		x = -1
+		y = 3
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_biden_offensive
+		icon = GFX_focus_CAL_biden_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_prepare_conquests focus = focus_aid_other_separatists }
+
+		mutually_exclusive = { focus = focus_defend_the_west }
+
+		x = 1
+		y = 3
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_burt_offensive
+		icon = GFX_focus_CAL_burt_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_biden_offensive }
+		prerequisite = { focus = focus_trump_offensive }
+
+		x = 0
+		y = 4
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_rosseau_offensive
+		icon = GFX_focus_CAL_rosseau_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_biden_offensive }
+		prerequisite = { focus = focus_trump_offensive }
+
+		x = -2
+		y = 4
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_defend_the_west
+		icon = GFX_focus_CAL_defend_the_west
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_aid_other_separatists }
+
+		mutually_exclusive = { focus = focus_trump_offensive }
+		mutually_exclusive = { focus = focus_biden_offensive }
+		
+		x = -3
+		y = 3
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_fort_lines
+		icon = GFX_focus_CAL_fort_lines
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_defend_the_west }
+		
+		x = -4
+		y = 4
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
 		}
 	}
 }

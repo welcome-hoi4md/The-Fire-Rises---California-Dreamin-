@@ -10,17 +10,16 @@ set_country_flag = developed_country
 
 
 recruit_character = CAL_gavin_newsom
-recruit_character = CAL_laura_yeager
-recruit_character = CAL_russell_bragg
-recruit_character = CAL_robert_waterhouse
-recruit_character = CAL_wade_hays
-recruit_character = CAL_edward_beatty
-recruit_character = CAL_wilburn_wigfall
-recruit_character = CAL_samuel_heintzelman
-recruit_character = CAL_lafayette_taylor
-recruit_character = CAL_george_wallace
-recruit_character = CAL_pierre_hampton
-recruit_character = CAL_cadmus_houston
+recruit_character = CAL_larry_elder
+recruit_character = CAL_john_h_cox
+recruit_character = CAL_caitlyn_jenner
+recruit_character = CAL_john_laird
+recruit_character = CAL_nancy_skinner
+recruit_character = CAL_michael_loebs
+recruit_character = CAL_louis_marinelli
+recruit_character = CAL_scott_wit
+recruit_character = CAL_ranger
+recruit_character = CAL_commie_nixon
 
 
 set_technology = {
@@ -192,9 +191,9 @@ set_popularities = {
 	communist = 0
 	libertarian_socialist = 4
 	social_democrat = 17
-    social_liberal = 28
-    market_liberal = 15
-    conservative = 19
+    social_liberal = 31
+    market_liberal = 4
+    conservative = 27
     authoritarian_democrat = 6
     nationalist = 11
     fascist = 0
