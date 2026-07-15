@@ -872,6 +872,28 @@ focus_tree = {
 			}
 		}
 	}
+	#Post Uni Tree - Newsom
+	focus = {
+		id = focus_prioritize_rebuilding_homes
+		icon = GFX_focus_CAL_prioritize_rebuilding_homes
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_LA_offensive }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
 	#Military Tree - Reunite Cali
 	focus = {
 		id = focus_defend_sacramento
