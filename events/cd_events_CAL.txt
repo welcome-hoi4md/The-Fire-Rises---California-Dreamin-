@@ -20,3 +20,74 @@ country_event = {
 		}
 	}
 }
+#Teacher yaps about california being a country
+country_event = {
+	id = cd_cal.2
+	title = cd_cal.2.t
+	desc = cd_cal.2.d
+	picture = GFX_CAL_classroom
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = cd_cal.2.a
+	}
+}
+#California secedes
+country_event = {
+	id = cd_cal.3
+	title = cd_cal.3.t
+	desc = cd_cal.3.d
+	picture = GFX_CAL_secession_report
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = cd_cal.3.a
+		set_cosmetic_tag = CAL_secessionist
+		hidden_effect = {
+			country_event = {
+				id = cd_cal_news.1
+			}
+		}
+	}
+}
+#Environment debate
+country_event = {
+	id = cd_cal.4
+	title = cd_cal.4.t
+	desc = cd_cal.4.d
+	picture = GFX_CAL_state_senate
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cd_cal.4.a
+	}
+}
+##News Events##
+#Secession
+news_event = {
+	id = cd_cal_news.1
+	title = cd_cal_news.1.t
+	desc = cd_cal_news.1.d
+	picture = GFX_news_event_yes_california
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = cd_cal_news.1.a
+		trigger = {
+			TAG = CAL
+		}
+	}
+	option = {
+		name = cd_cal_news.1.b
+		trigger = {
+			NOT = {
+				TAG = CAL
+			}
+		}
+	}
+}

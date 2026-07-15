@@ -20,6 +20,7 @@ recruit_character = CAL_louis_marinelli
 recruit_character = CAL_scott_wit
 recruit_character = CAL_ranger
 recruit_character = CAL_commie_nixon
+recruit_character = CAL_evil_ass_reagan
 
 
 set_technology = {

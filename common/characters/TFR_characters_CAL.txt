@@ -131,4 +131,16 @@ characters={
 			id=-1
 		}
 	}
+	CAL_evil_ass_reagan={
+		portraits={
+			civilian={
+				large="GFX_portrait_CAL_evil_ass_reagan"
+			}
+		}
+		country_leader={
+			ideology=esoteric_fascism
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
 }

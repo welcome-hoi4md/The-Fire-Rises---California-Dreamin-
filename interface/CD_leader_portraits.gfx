@@ -44,4 +44,8 @@ spriteTypes = {
 		name = "GFX_portrait_CAL_commie_nixon"
 		texturefile = "gfx/leaders/CAL/CAL_commie_nixon.png"
 	}
+	spriteType = {
+		name = "GFX_portrait_CAL_evil_ass_reagan"
+		texturefile = "gfx/leaders/CAL/CAL_evil_ass_reagan.png"
+	}
 }
