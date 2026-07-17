@@ -21,3 +21,15 @@ CAL_fight_APLA_category = {
 	}
 	priority = 5
 }
+
+CAL_militia_loyalty = {
+	icon = #
+	visible_when_empty = yes
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		
+	}
+	priority = 5
+}

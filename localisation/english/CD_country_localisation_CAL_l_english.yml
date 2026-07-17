@@ -94,3 +94,27 @@
  CAL_secessionist: "Republic of California"
  CAL_secessionist_DEF: "the Republic of California"
  CAL_secessionist_ADJ: "Californian"
+ #Decisions
+ CAL_militia_loyalty:0 "Dealing With Militias"
+ CAL_militia_loyalty_desc:0 "\n\n\n\n\n(Insert Image Here)\n\n\n\n\n\n\n\n(Insert Description Here)\n\n§GMilitia Loyalty§!: §Y[?cali_militia_loyalty_var|0|]%§!\n           If §GLoyalty§! < §Y10%§! then the @CLM §PCalifornia State Militia§! will rise up!\n\n§RMilitia Power§!: §Y[?cali_militia_power_var|0|]%§!\n           If §RPower§! > §Y80%§! then the @CLM §PCalifornia State Militia§! will rise up!"
+ CAL_militia_rising_up:0 "Imminent Militia Uprising"
+ CAL_militia_questioning_loyalty:0 "California State Militia Questions Loyalty"
+ CAL_militia_gathering_support:0 "California State Militia Gathering Support"
+ CAL_give_militia_extra_weapons:0 "Give Militias Extra Weapons"
+ CAL_empower_leftist_militias:0 "Empower Leftist Militias"
+ CAL_regulate_militias:0 "Regulate Militias"
+ CAL_work_with_militias:0 "Work With Militias"
+ 
+ #Triggers
+ CAL_militia_loyalty_is_safe:0 "§GMilitia Loyalty§! > §Y10%§!"
+ CAL_militia_power_is_safe:0 "§RMilitia Power§! < §Y80%§!"
+ 
+ CD_is_dealing_with_militias:0 " §YIs Already Dealing With Militias§!"
+ 
+ #Effects
+ sub_from_cali_militia_loyalty_var:0 "Subtracts §R$RIGHT|0$§! From §GMilitia Loyalty§!"
+ add_to_cali_militia_loyalty_var:0 "Adds §R$RIGHT|0$§! To §GMilitia Loyalty§!"
+ 
+ add_to_cali_militia_power_var:0 "Adds §R$RIGHT|0$§! To §RMilitia Power§!"
+ sub_from_cali_militia_power_var:0 "Subtracts §R$RIGHT|0$§! From §RMilitia Power§!"
+ 
