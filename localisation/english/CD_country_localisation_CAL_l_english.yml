@@ -105,6 +105,15 @@
  CAL_regulate_militias:0 "Regulate Militias"
  CAL_work_with_militias:0 "Work With Militias"
  
+ CAL_fight_APLA_category:0 "Battle For California"
+ CAL_defend_sanjose_mission:0 "Defend San Jose"
+ CAL_defend_sacramento_mission:0 "Defend Sacramento"
+ CAL_liberate_los_angeles:0 "Liberate Los Angeles"
+ CAL_liberate_frisco:0 "Liberate San Francisco"
+ 
+ CAL_cali_legislature:0 "California Legislature"
+ CAL_cali_legislature_desc:0 "\n\n\n\n\n(Insert Image Here)\n\n\n\n\n\n\n\n(Insert Description Here)\n\n[GetCurrentDominantCaliLegParty]"
+ 
  #Triggers
  CAL_militia_loyalty_is_safe:0 "§GMilitia Loyalty§! > §Y10%§!"
  CAL_militia_power_is_safe:0 "§RMilitia Power§! < §Y80%§!"

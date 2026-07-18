@@ -1,0 +1,12 @@
+#Civil War Effects
+USA_civil_war_outbreak_effect = {
+	if = {
+		limit = {
+			has_global_flag = play_CAL_global
+		}
+		CAL = {
+			change_tag_from = USA
+		}
+		clr_global_flag = play_CAL_global
+	}
+}
