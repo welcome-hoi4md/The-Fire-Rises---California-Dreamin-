@@ -1,0 +1,51 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_portrait_CAL_gavin_newsom"
+		texturefile = "gfx/leaders/CAL/CAL_gavin_newsom.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_larry_elder"
+		texturefile = "gfx/leaders/CAL/CAL_larry_elder.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_john_h_cox"
+		texturefile = "gfx/leaders/CAL/CAL_john_h_cox.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_caitlyn_jenner"
+		texturefile = "gfx/leaders/CAL/CAL_caitlyn_jenner.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_john_laird"
+		texturefile = "gfx/leaders/CAL/CAL_john_laird.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_nancy_skinner"
+		texturefile = "gfx/leaders/CAL/CAL_nancy_skinner.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_michael_loebs"
+		texturefile = "gfx/leaders/CAL/CAL_michael_loebs.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_louis_marinelli"
+		texturefile = "gfx/leaders/CAL/CAL_louis_marinelli.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_scott_witt"
+		texturefile = "gfx/leaders/CAL/CAL_scott_witt.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_ranger"
+		texturefile = "gfx/leaders/CAL/CAL_ranger.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_commie_nixon"
+		texturefile = "gfx/leaders/CAL/CAL_commie_nixon.png"
+	}
+	spriteType = {
+		name = "GFX_portrait_CAL_evil_ass_reagan"
+		texturefile = "gfx/leaders/CAL/CAL_evil_ass_reagan.png"
+	}
+}

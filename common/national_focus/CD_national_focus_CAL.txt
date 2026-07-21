@@ -1,0 +1,2709 @@
+#focus tree refresher, change the text here & save to refresh the focus tree!
+focus_tree = {
+	id = CAL
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CAL
+		}
+	}
+	focus = {
+		id = focus_stay_calm
+		icon = GFX_focus_CAL_calmdown
+
+		x = 0
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = focus_recruit_mils
+		icon = GFX_focus_CAL_militias
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		prerequisite = { focus = focus_stay_calm }
+
+		completion_reward = {
+			add_war_support = 0.5
+			add_stability = -0.02
+			set_power_balance = {
+				id = CAL_power_balance
+				left_side = CAL_militia_side
+				right_side = CAL_natguard_side
+				set_value = 0.10
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = focus_emergency_govt
+		icon = GFX_focus_CAL_emergency_govt
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		prerequisite = { focus = focus_stay_calm }
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.18
+			#government decision menu
+			set_temp_variable = {
+					coalition_partner_var_temp = token:social_democrat
+				}
+			add_to_coalition = yes
+			set_temp_variable = {
+					coalition_partner_var_temp = token:conservative
+				}
+			add_to_coalition = yes
+			set_temp_variable = {
+					coalition_partner_var_temp = token:social_liberal
+				}
+			add_to_coalition = yes
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+	}
+	focus = {
+		id = focus_start_offensive
+		icon = GFX_focus_CAL_firefighter
+
+		x = 0
+		y = 2
+
+		cost = 1
+
+		prerequisite = { focus = focus_recruit_mils }
+		prerequisite = { focus = focus_emergency_govt }
+
+		completion_reward = {
+			add_war_support = 0.10
+			# also attack bonuses n shit
+			country_event = {
+				id = cd_cal.1
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+	}
+	#Political Tree
+	#Political Tree - Democrats
+	focus = {
+		id = focus_centralize_govt
+		icon = GFX_focus_CAL_centralize_govt
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		prerequisite = { focus = focus_start_offensive }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats decisions
+		}
+	}
+	focus = {
+		id = focus_lockheed
+		icon = GFX_focus_CAL_lockheed
+
+		x = -1
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_centralize_govt }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats decisions
+			#econ & airforce buffs?
+		}
+	}
+	focus = {
+		id = focus_federal_aid
+		icon = GFX_focus_CAL_federal_aid
+
+		x = 1
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_centralize_govt }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#GDP boost
+		}
+	}
+	focus = {
+		id = focus_mil_industry
+		icon = GFX_focus_CAL_mil_industry
+
+		x = 0
+		y = 5
+
+		cost = 2
+
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#mil factory
+		}
+	}
+	focus = {
+		id = focus_fight_gangs
+		icon = GFX_focus_CAL_fight_gangs
+
+		x = 2
+		y = 5
+
+		cost = 2
+
+		prerequisite = { focus = focus_crime_crackdown }
+		prerequisite = { focus = focus_federal_aid }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to democrats
+			#give influence to republicans
+			#attack bonus against criminal warlords
+		}
+	}
+	focus = {
+		id = focus_af_expansion_act
+		icon = GFX_focus_CAL_af_expansion_act
+
+		x = -1
+		y = 6
+
+		cost = 2
+
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
+		mutually_exclusive = { focus = focus_civ_industry }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#airforce & military production buffs
+		}
+	}
+	focus = {
+		id = focus_civil_liberties
+		icon = GFX_focus_CAL_civil_liberties
+
+		x = 1
+		y = 6
+
+		cost = 2
+
+		prerequisite = { focus = focus_lockheed focus = focus_federal_aid }
+		mutually_exclusive = { focus = focus_anti_socialism }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+		}
+	}
+	focus = {
+		id = focus_unite_california_dems
+		icon = GFX_focus_CAL_unite_california_dems
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = social_liberal
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = social_liberal
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	# Political Tree, Progressives
+	focus = {
+		id = focus_socdem_negotiate
+		icon = GFX_focus_CAL_socdem_negotiate
+
+		x = -4
+		y = 3
+
+		cost = 1
+
+		prerequisite = { focus = focus_start_offensive }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to socdems decisions
+		}
+	}
+	focus = {
+		id = focus_mechanized_evs
+		icon = GFX_focus_CAL_mechanized_evs
+
+		x = -5
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_socdem_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#progressive support shit
+		}
+	}
+	focus = {
+		id = focus_support_unions
+		icon = GFX_focus_CAL_support_unions
+
+		x = -3
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_socdem_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#worker rights law changes
+			#progressive support shit
+		}
+	}
+	focus = {
+		id = focus_enviro_regulate
+		icon = GFX_focus_CAL_enviro_regulate
+
+		x = -4
+		y = 5
+
+		cost = 2
+
+		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#progressive support shit
+		}
+	}
+	focus = {
+		id = focus_employ_engineers
+		icon = GFX_focus_CAL_employ_engineers
+
+		x = -2
+		y = 5
+
+		cost = 2
+
+		prerequisite = { focus = focus_support_unions }
+		prerequisite = { focus = focus_lockheed }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#progressive support shit
+			#democrat support
+			#GDP/econ boost
+		}
+	}
+	focus = {
+		id = focus_civ_industry
+		icon = GFX_focus_CAL_civ_industry
+
+		x = -3
+		y = 6
+
+		cost = 2
+
+		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
+		mutually_exclusive = { focus = focus_af_expansion_act }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#progressive support shit
+			#consumer goods bonus
+		}
+	}
+	focus = {
+		id = focus_secessionists_left
+		icon = GFX_focus_CAL_secessionists_right
+
+		x = -5
+		y = 6
+		
+		cost = 2
+
+		prerequisite = { focus = focus_mechanized_evs focus = focus_support_unions }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_unite_california_progressives
+		icon = GFX_focus_CAL_unite_california_unite_california_progressives
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = social_democrat
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = social_democrat
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	#Political Tree - Republicans
+	focus = {
+		id = focus_republican_negotiate
+		icon = GFX_focus_CAL_republican_negotiate
+
+		x = 4
+		y = 3
+
+		cost = 1
+
+		prerequisite = { focus = focus_start_offensive }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans decisions
+		}
+	}
+	focus = {
+		id = focus_crime_crackdown
+		icon = GFX_focus_CAL_crime_crackdown
+
+		x = 3
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_republican_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change some political law
+		}
+	}
+	focus = {
+		id = focus_deregulate_industry
+		icon = GFX_focus_CAL_deregulate_industry
+
+		x = 5
+		y = 4
+
+		cost = 2
+
+		prerequisite = { focus = focus_republican_negotiate }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change some economic law
+		}
+	}
+	focus = {
+		id = focus_cut_taxes
+		icon = GFX_focus_CAL_cut_taxes
+
+		x = 4
+		y = 5
+
+		cost = 2
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_anti_socialism
+		icon = GFX_focus_CAL_anti_socialism
+
+		x = 3
+		y = 6
+
+		cost = 2
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		mutually_exclusive = { focus = focus_civil_liberties }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#drops libsoc popularity
+			#civil liberties drop
+		}
+	}
+	focus = {
+		id = focus_secessionists_right
+		icon = GFX_focus_CAL_secessionists_right
+
+		x = 5
+		y = 6
+		
+		cost = 2
+
+		prerequisite = { focus = focus_crime_crackdown focus = focus_deregulate_industry }
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#give influence to republicans
+			#change the tax law
+		}
+	}
+	focus = {
+		id = focus_unite_california_republicans
+		icon = GFX_focus_CAL_unite_california_unite_california_republicans
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		
+		allow_branch = {
+			has_government = conservative
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = conservative
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	#Political Tree - Secessionists
+	focus = {
+		id = focus_unite_california_secessionists
+		icon = GFX_focus_CAL_unite_california_secessionists
+
+		x = 0
+		y = 7
+
+		cost = 4
+
+		prerequisite = { focus = focus_mil_industry focus = focus_cut_taxes focus = focus_enviro_regulate }
+		available = { 
+			OR = { 
+				has_government = libertarian_socialist 
+				has_government = authoritarian_democrat
+			} 
+		}
+		allow_branch = {
+			OR = {
+				has_government = libertarian_socialist
+				has_government = authoritarian_democrat
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_progressive_republic
+		icon = GFX_focus_CAL_progressive_republic
+
+		x = -1
+		y = 8
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_enshrine_environmental_regulations
+		icon = GFX_focus_CAL_enshrine_environmental_regulations
+
+		x = -2
+		y = 9
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_progressive_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			country_event = {
+				id = cd_cal.4
+			}
+		}
+	}
+	focus = {
+		id = focus_progressive_leaders
+		icon = GFX_focus_CAL_progressive_leaders
+
+		x = -1
+		y = 10
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_enshrine_environmental_regulations
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = focus_nationalist_leaders
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the libsocs in power if you're authdem
+		}
+	}
+	focus = {
+		id = focus_CAL_constitutional_convention
+		icon = GFX_focus_CAL_enshrine_environment_regulations
+
+		x = 0
+		y = 9
+
+		cost = 5
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the libsocs in power if you're authdem
+		}
+	}
+	focus = {
+		id = focus_nationalist_republic
+		icon = GFX_focus_CAL_nationalist_republic
+
+		x = 1
+		y = 8
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_unite_california_secessionists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#political law change
+			#lots of buffs
+			#ends the militia state BOP
+		}
+	}
+	focus = {
+		id = focus_enforce_national_identity
+		icon = GFX_focus_CAL_enforce_national_identity
+
+		x = 2
+		y = 9
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_nationalist_republic
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			country_event = {
+				id = cd_cal.2
+			}
+		}
+	}
+	focus = {
+		id = focus_nationalist_leaders
+		icon = GFX_focus_CAL_nationalist_leaders
+
+		x = 1
+		y = 10
+
+		cost = 2
+
+		prerequisite = { 
+			focus = focus_enforce_national_identity
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = focus_progressive_leaders
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			#puts the authdems in power if you're libsoc
+		}
+	}
+	focus = {
+		id = focus_declare_independence
+		icon = GFX_focus_CAL_declare_independence
+
+		x = 0
+		y = 11
+
+		cost = 5
+
+		prerequisite = { 
+			focus = focus_nationalist_leaders
+			focus = focus_progressive_leaders
+		}
+		prerequisite = { 
+			focus = focus_CAL_constitutional_convention
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_political_power = 25
+			country_event = {
+				id = cd_cal.3
+			}
+		}
+	}
+	#Post Uni Tree - Newsom
+	focus = {
+		id = focus_prioritize_rebuilding_homes
+		icon = GFX_focus_CAL_prioritize_rebuilding_homes
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_unite_california_dems }
+
+		mutually_exclusive = { focus = focus_prioritize_rebuilding_industry }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_prioritize_rebuilding_industry
+		icon = GFX_focus_CAL_prioritize_rebuilding_industry
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_unite_california_dems }
+
+		mutually_exclusive = { focus = focus_prioritize_rebuilding_homes }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_high_speed_rail
+		icon = GFX_focus_CAL_high_speed_rail
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_prioritize_rebuilding_homes focus = focus_prioritize_rebuilding_industry }
+
+		x = -8
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_san_diego_la_line
+		icon = GFX_focus_CAL_san_diego_la_line
+		relative_position_id = focus_high_speed_rail
+		prerequisite = { focus = focus_high_speed_rail }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_fresno_la_line
+		icon = GFX_focus_CAL_fresno_la_line
+		relative_position_id = focus_high_speed_rail
+		prerequisite = { focus = focus_high_speed_rail }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_sanfran_fresno_line
+		icon = GFX_focus_CAL_sanfran_fresno_line
+		relative_position_id = focus_high_speed_rail
+		prerequisite = { focus = focus_san_diego_la_line }
+		prerequisite = { focus = focus_fresno_la_line }
+
+		x = -1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_sacramento_fresno_line
+		icon = GFX_focus_CAL_sacramento_fresno_line
+		relative_position_id = focus_high_speed_rail
+		prerequisite = { focus = focus_san_diego_la_line }
+		prerequisite = { focus = focus_fresno_la_line }
+
+		x = 1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_complete_highspeed_rail
+		icon = GFX_focus_CAL_complete_highspeed_rail
+		relative_position_id = focus_high_speed_rail
+		prerequisite = { focus = focus_sanfran_fresno_line }
+		prerequisite = { focus = focus_sacramento_fresno_line }
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_rebuild_electricity
+		icon = GFX_focus_CAL_rebuild_electricity
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_prioritize_rebuilding_homes focus = focus_prioritize_rebuilding_industry }
+
+		x = -4
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_pg_and_e_deals
+		icon = GFX_focus_CAL_pg_and_e_deals
+		relative_position_id = focus_rebuild_electricity
+		prerequisite = { focus = focus_rebuild_electricity }
+		mutually_exclusive = { focus = focus_green_energy_deals }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_loosen_oil_regulations
+		icon = GFX_focus_CAL_loosen_energy_regulations
+		relative_position_id = focus_rebuild_electricity
+		prerequisite = { focus = focus_pg_and_e_deals }
+
+		x = -1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_green_energy_deals
+		icon = GFX_focus_CAL_green_energy_deals
+		relative_position_id = focus_rebuild_electricity
+		prerequisite = { focus = focus_rebuild_electricity }
+		mutually_exclusive = { focus = focus_pg_and_e_deals }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_phase_out_fossil_fuels
+		icon = GFX_focus_CAL_phase_out_fossil_fuels
+		relative_position_id = focus_rebuild_electricity
+		prerequisite = { focus = focus_green_energy_deals }
+
+		x = 1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_finish_energy_reforms
+		icon = GFX_focus_CAL_finish_energy_reforms
+		relative_position_id = focus_rebuild_electricity
+		prerequisite = { focus = focus_loosen_oil_regulations focus = focus_phase_out_fossil_fuels }
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_solidify_government
+		icon = GFX_focus_CAL_solidify_government
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_prioritize_rebuilding_homes focus = focus_prioritize_rebuilding_industry }
+
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_housing_bill
+		icon = GFX_focus_CAL_housing_bill
+		relative_position_id = focus_solidify_government
+		prerequisite = { focus = focus_solidify_government }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_go_our_separate_ways
+		icon = GFX_focus_CAL_go_our_separate_ways
+		relative_position_id = focus_solidify_government
+		prerequisite = { focus = focus_housing_bill focus = focus_expand_police_funding }
+
+		x = -1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_expand_police_funding
+		icon = GFX_focus_CAL_police_funding
+		relative_position_id = focus_solidify_government
+		prerequisite = { focus = focus_solidify_government }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_apply_for_un_aid
+		icon = GFX_focus_apply_for_un_aid
+		relative_position_id = focus_solidify_government
+		prerequisite = { focus = focus_expand_police_funding focus = focus_housing_bill }
+
+		x = 1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_return_to_normalcy
+		icon = GFX_focus_return_to_normalcy
+		relative_position_id = focus_solidify_government
+		prerequisite = { focus = focus_go_our_separate_ways }
+		prerequisite = { focus = focus_apply_for_un_aid }
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_expand_sustainability
+		icon = GFX_focus_CAL_expand_sustainability
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_prioritize_rebuilding_homes focus = focus_prioritize_rebuilding_industry }
+
+		x = 4
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_reform_irrigation
+		icon = GFX_focus_CAL_reform_irrigation
+		relative_position_id = focus_expand_sustainability
+		prerequisite = { focus = focus_expand_sustainability }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_reduce_emissions
+		icon = GFX_focus_CAL_reduce_emissions
+		relative_position_id = focus_expand_sustainability
+		prerequisite = { focus = focus_expand_sustainability }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_2030_gas_car_ban
+		icon = GFX_focus_CAL_2030_gas_car_ban
+		relative_position_id = focus_expand_sustainability
+		prerequisite = { focus = focus_reduce_emissions }
+
+		x = 1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_net_zero_2050
+		icon = GFX_focus_CAL_net_zero_2050
+		relative_position_id = focus_expand_sustainability
+		prerequisite = { focus = focus_cut_back_alfalfa_farming }
+		prerequisite = { focus = focus_2030_gas_car_ban }
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_cut_back_alfalfa_farming
+		icon = GFX_focus_CAL_cut_back-alfalfa_farming
+		relative_position_id = focus_expand_sustainability
+		prerequisite = { focus = focus_reform_irrigation }
+
+		x = -1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_tech_expansion
+		icon = GFX_focus_CAL_tech_expansion
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_prioritize_rebuilding_homes focus = focus_prioritize_rebuilding_industry }
+
+		x = 8
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_fund_openai
+		icon = GFX_focus_CAL_fund_openai
+		relative_position_id = focus_tech_expansion
+		prerequisite = { focus = focus_tech_expansion }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_ai_sezs
+		icon = GFX_focus_CAL_ai_sezs
+		relative_position_id = focus_tech_expansion
+		prerequisite = { focus = focus_fund_openai }
+		prerequisite = { focus = focus_build_datacenters }
+
+		x = -1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_build_datacenters
+		icon = GFX_focus_CAL_build_datacenters
+		relative_position_id = focus_tech_expansion
+		prerequisite = { focus = focus_tech_expansion }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_datacenter_powerplants
+		icon = GFX_focus_CAL_datacenter_powerplants
+		relative_position_id = focus_tech_expansion
+		prerequisite = { focus = focus_build_datacenters }
+		prerequisite = { focus = focus_fund_openai }
+
+		x = 1
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_launch_chatgpt
+		icon = GFX_focus_CAL_launch_chatgpt
+		relative_position_id = focus_tech_expansion
+		prerequisite = { focus = focus_ai_sezs }
+		prerequisite = { focus = focus_datacenter_powerplants }
+
+		x = 0
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_finish_political_tree
+		icon = GFX_focus_CAL_finish_political_tree
+		relative_position_id = focus_unite_california_dems
+		prerequisite = { focus = focus_complete_highspeed_rail focus = focus_finish_energy_reforms focus = focus_return_to_normalcy focus = focus_net_zero_2050 focus = focus_launch_chatgpt }
+
+		x = 0
+		y = 6
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	###Industrial Tree###
+	#Le evil corpo path#
+	focus = {
+		id = focus_court_silicon_valley
+		icon = GFX_focus_CAL_shock_and_awe
+		prerequisite = { focus = focus_start_offensive }
+		mutually_exclusive = { focus = focus_regulate_corporations }
+	
+		x = -18
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_corporate_refuge
+		icon = GFX_focus_CAL_corporate_refuge
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_court_silicon_valley }
+		
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_invite_palantir
+		icon = GFX_focus_CAL_invite_palantir
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_court_silicon_valley }
+		mutually_exclusive = { focus = focus_let_palantir_burn }
+		
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_reward_loyalty
+		icon = GFX_focus_CAL_reward_loyalty
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_corporate_refuge }
+		mutually_exclusive = { focus = focus_tesla_negotiations }
+		
+		x = -2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_tesla_negotiations
+		icon = GFX_focus_CAL_tesla_negotiations
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_corporate_refuge }
+		mutually_exclusive = { focus = focus_reward_loyalty }
+		
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_ai_revolution
+		icon = GFX_focus_CAL_ai_revolution
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_reward_loyalty focus = focus_tesla_negotiations }
+		
+		x = -1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_ai_guided_craft
+		icon = GFX_focus_CAL_ai_guided_craft
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_reward_loyalty focus = focus_tesla_negotiations focus = focus_convert_computer_factories }
+		mutually_exclusive = { focus = focus_human_guided_drones }
+		
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_consumer_industry
+		icon = GFX_focus_CAL_consumer_industry
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_ai_revolution }
+		mutually_exclusive = { focus = focus_human_warfare }
+		
+		x = -2
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_hightech_appliances
+		icon = GFX_focus_CAL_hightech_appliances
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_ai_revolution }
+		
+		x = 0
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	#Le holsum regulation path#
+	focus = {
+		id = focus_regulate_corporations
+		icon = GFX_focus_CAL_shock_and_awe
+		relative_position_id = focus_court_silicon_valley
+		prerequisite = { focus = focus_start_offensive }
+		mutually_exclusive = { focus = focus_court_silicon_valley }
+		
+		x = 4
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_let_palantir_burn
+		icon = GFX_focus_CAL_let_palantir_burn
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_regulate_corporations }
+		mutually_exclusive = { focus = focus_invite_palantir }
+		
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_convert_computer_factories
+		icon = GFX_focus_CAL_convert_computer_factories
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_invite_palantir focus = focus_let_palantir_burn }
+		
+		x = -2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_fund_local_industry
+		icon = GFX_focus_CAL_fund_local_industry
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_regulate_corporations }
+		
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_states_first
+		icon = GFX_focus_CAL_states_first
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_fund_local_industry }
+		mutually_exclusive = { focus = focus_federal_industry }
+		
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_federal_industry
+		icon = GFX_focus_CAL_federal_industry
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_fund_local_industry }
+		mutually_exclusive = { focus = focus_states_first }
+		
+		x = 2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_human_guided_drones
+		icon = GFX_focus_CAL_human_guided_drones
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_federal_industry focus = focus_states_first focus = focus_convert_computer_factories }
+		mutually_exclusive = { focus = focus_ai_guided_craft }
+		x = -1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_corporate_accountability
+		icon = GFX_focus_CAL_corporate_accountability
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_federal_industry focus = focus_states_first }
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_threaten_corporations
+		icon = GFX_focus_CAL_threaten_corporations
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_corporate_accountability }
+		x = 0
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_push_against_lobbying
+		icon = GFX_focus_CAL_push_against_lobbying
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_corporate_accountability }
+		x = 2
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_expand_drone_warfare
+		icon = GFX_focus_CAL_expand_drone_warfare
+		relative_position_id = focus_regulate_corporations
+		prerequisite = { focus = focus_ai_guided_craft focus = focus_human_guided_drones }
+		x = -2
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_economy_of_future
+		icon = GFX_focus_economy_of_future
+		relative_position_id = focus_regulate_corporations
+		prerequisite = {
+			focus = focus_expand_drone_warfare
+		}
+		prerequisite = {
+			focus = focus_consumer_industry
+			focus = focus_threaten_corporations
+		}
+		prerequisite = {
+			focus = focus_hightech_appliances
+			focus = focus_push_against_lobbying
+		}
+		x = -2
+		y = 5
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	###Military Tree - Reunite Cali###
+	focus = {
+		id = focus_defend_sacramento
+		icon = GFX_focus_CAL_defend_sacramento
+
+		x = 21
+		y = 3
+
+		cost = 1
+
+		prerequisite = { focus = focus_start_offensive }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			#manpower buffs
+			#defense buffs
+		}
+	}
+	focus = {
+		id = focus_cascades_offensive
+		icon = GFX_focus_CAL_cascades_offensive
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_LA_offensive }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_LA_offensive
+		icon = GFX_focus_CAL_LA_offensive
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_defend_sacramento }
+
+		mutually_exclusive = { focus = focus_cascades_offensive }
+
+		x = 2
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_fortify_sierra_nevada
+		icon = GFX_focus_CAL_fortify_sierra_nevada
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_LA_crackdown focus = focus_cascades_offensive }
+		mutually_exclusive = { focus = focus_bomb_apla_factories }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = focus_bomb_apla_factories
+		icon = GFX_focus_CAL_bomb_apla_factories
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_LA_offensive focus = focus_cascades_offensive }
+
+		x = 3
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_san_francisco_offensive
+		icon = GFX_focus_CAL_san_francisco_offensive
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_fortify_sierra_nevada focus = focus_bomb_apla_factories }
+
+		x = 2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = focus_end_communist_insurgents
+		icon = GFX_focus_CAL_end_communist_insurgents
+		relative_position_id = focus_cascades_offensive
+		prerequisite = { focus = focus_san_francisco_offensive }
+
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		}
+	}
+	#Military Tree - Militias V Natguard
+	focus = {
+		id = focus_support_natguard
+		icon = GFX_focus_CAL_support_natguard
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		x = -3
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_raise_militias
+		icon = GFX_focus_CAL_raise_militias
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_defend_sacramento }
+		mutually_exclusive = { focus = focus_support_natguard }
+	
+		x = -4
+		y = 0
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_shock_militias
+		icon = GFX_focus_CAL_shock_militias
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_raise_militias focus = focus_support_natguard }
+		mutually_exclusive = { focus = focus_abandon_rangers }
+	
+		x = -3
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_abandon_rangers
+		icon = GFX_focus_CAL_abandon_rangers
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_raise_militias focus = focus_support_natguard }
+		mutually_exclusive = { focus = focus_shock_militias }
+	
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_create_mechanized
+		icon = GFX_focus_CAL_create_mechanized
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_support_natguard }
+		mutually_exclusive = { focus = focus_shock_militias }
+	
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_organize_militias
+		icon = GFX_focus_CAL_organize_militias
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_shock_militias focus = focus_abandon_rangers }
+	
+		x = -2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#organization & mp buffs
+		}
+	}
+	focus = {
+		id = focus_tank_offensive
+		icon = GFX_focus_CAL_tank_offensive
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_create_mechanized }
+	
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#gives tanks
+		#buffs tanks
+		}
+	}
+	focus = {
+		id = focus_special_forces
+		icon = GFX_focus_CAL_special_forces
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_raise_militias }
+	
+		x = -5
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#gives tanks
+		#buffs tanks
+		}
+	}
+	focus = {
+		id = focus_talks_with_wagner
+		icon = GFX_focus_CAL_talks_with_wagner
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_special_forces }
+	
+		x = -4
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#spawns russian special forces divisions
+		}
+	}
+	focus = {
+		id = focus_partisan_warfare
+		icon = GFX_focus_CAL_partisan_warfare
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_talks_with_wagner focus = focus_organize_militias}
+		
+		mutually_exclusive = { focus = focus_traditional_warfare }
+	
+		x = -3
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_traditional_warfare
+		icon = GFX_focus_CAL_traditional_warfare
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_tank_offensive focus = focus_organize_militias}
+		
+		mutually_exclusive = { focus = focus_partisan_warfare }
+	
+		x = -1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_combined_arms_doctrine
+		icon = GFX_focus_CAL_combined_arms_doctrine
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_tank_offensive }
+	
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_shock_and_awe
+		icon = GFX_focus_CAL_shock_and_awe
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_talks_with_wagner }
+	
+		x = -5
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	focus = {
+		id = focus_finish_military_reform
+		icon = GFX_focus_CAL_finish_military_reform
+		relative_position_id = focus_support_natguard
+		prerequisite = { focus = focus_shock_and_awe focus = focus_combined_arms_doctrine }
+		prerequisite = { focus = focus_traditional_warfare focus = focus_partisan_warfare }
+	
+		x = -2
+		y = 4
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#buffs
+		}
+	}
+	#Military Tree, air force
+	focus = {
+		id = focus_purchase_aircraft
+		icon = GFX_focus_CAL_purchase_aircraft
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		x = -1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_stealth_bombers
+		icon = GFX_focus_CAL_stealth_bombers
+		relative_position_id = focus_purchase_aircraft
+		prerequisite = { focus = focus_purchase_aircraft }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_cas_doctrine
+		icon = GFX_focus_CAL_stealth_bombers
+		relative_position_id = focus_purchase_aircraft
+		prerequisite = { focus = focus_stealth_bombers }
+		mutually_exclusive = { focus = focus_fighter_doctrine }
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_fighter_doctrine
+		icon = GFX_focus_CAL_stealth_bombers
+		relative_position_id = focus_purchase_aircraft
+		prerequisite = { focus = focus_stealth_bombers }
+		mutually_exclusive = { focus = focus_cas_doctrine }
+		x = 2
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_airforce_bigbuffs
+		icon = GFX_focus_CAL_airforce_bigbuffs
+		relative_position_id = focus_purchase_aircraft
+		prerequisite = { focus = focus_cas_doctrine focus = focus_fighter_doctrine }
+		x = 1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#Military Tree, reunifying america
+	focus = {
+		id = focus_state_faction
+		icon = GFX_focus_CAL_state_faction
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+
+		x = 5
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#forms the Federal State Alliance
+		}
+	}
+	focus = {
+		id = focus_expand_north
+		icon = GFX_focus_CAL_expand_north
+		relative_position_id = focus_state_faction
+		prerequisite = { focus = focus_state_faction }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_aid_other_states
+		icon = GFX_focus_CAL_expand_north
+		relative_position_id = focus_state_faction
+		prerequisite = { focus = focus_expand_north }
+
+		x = 0
+		y = 2
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = focus_choose_acw_side
+		icon = GFX_focus_CAL_choose_acw_side
+		relative_position_id = focus_state_faction
+		prerequisite = { focus = focus_aid_other_states }
+
+		mutually_exclusive = { focus = focus_aid_other_separatists }
+
+		x = -1
+		y = 3
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	#Military Tree - chosen government gets capped
+	focus = {
+		id = focus_fed_died
+		icon = GFX_focus_CAL_fed_died
+		relative_position_id = focus_defend_sacramento
+		prerequisite = { focus = focus_defend_sacramento }
+		#also requires you to choose a side and that sides government falls
+		#auto completes if your chosen side capps
+
+		x = 7
+		y = 1
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#nun much
+		}
+	}
+	focus = {
+		id = focus_declare_successor
+		icon = GFX_focus_CAL_declare_successor
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_fed_died }
+
+		x = 1
+		y = 1
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#renames FSA to Sacramento Government
+		}
+	}
+	focus = {
+		id = focus_prepare_conquests
+		icon = GFX_focus_CAL_prepare_conquests
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_declare_successor }
+
+		x = 0
+		y = 2
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_trump_offensive
+		icon = GFX_focus_CAL_trump_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_prepare_conquests focus = focus_aid_other_separatists }
+
+		mutually_exclusive = { focus = focus_biden_offensive }
+		
+		x = -1
+		y = 3
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_biden_offensive
+		icon = GFX_focus_CAL_biden_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_prepare_conquests focus = focus_aid_other_separatists }
+
+		mutually_exclusive = { focus = focus_trump_offensive }
+
+		x = 1
+		y = 3
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_burt_offensive
+		icon = GFX_focus_CAL_burt_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_biden_offensive focus = focus_trump_offensive focus = focus_choose_acw_side }
+
+		x = 0
+		y = 4
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+	focus = {
+		id = focus_rosseau_offensive
+		icon = GFX_focus_CAL_rosseau_offensive
+		relative_position_id = focus_fed_died
+		prerequisite = { focus = focus_biden_offensive focus = focus_trump_offensive focus = focus_choose_acw_side }
+
+		x = -2
+		y = 4
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+		}
+		completion_reward = {
+		#general buffs
+		}
+	}
+}

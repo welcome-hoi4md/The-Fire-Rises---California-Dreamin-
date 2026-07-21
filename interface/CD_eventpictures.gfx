@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_san_jose"
+		texturefile = "gfx/event_pictures/report_event/CAL/report_san_jose.png"
+	}
+	spriteType = {
+		name = "GFX_CAL_classroom"
+		texturefile = "gfx/event_pictures/CAL/CAL_classroom.png"
+	}
+	spriteType = {
+		name = "GFX_CAL_state_senate"
+		texturefile = "gfx/event_pictures/CAL/CAL_state_senate.png"
+	}
+	spriteType = {
+		name = "GFX_CAL_secession_report"
+		texturefile = "gfx/event_pictures/CAL/CAL_secession_report.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_yes_california"
+		texturefile = "gfx/event_pictures/news_event/yes_california.png"
+	}
+}

@@ -1,0 +1,477 @@
+#USA_counting_heads_category = {
+#	USA_play_as_cali_decision = {
+#		icon = USA_rally_support
+#		allowed = {
+#			original_tag = USA
+#		}
+#		visible = {
+#			USA_sided_with_trump_trigger = yes
+#			has_global_flag = play_USC_global
+#			has_active_mission = USA_civil_war_mission
+#		}
+#		available = {
+#			USA_sided_with_trump_trigger = yes
+#		}
+#		ai_will_do = {
+#			base = 1000
+#		}
+#		complete_effect = {
+#			custom_effect_tooltip = play_CAL_tooltip
+#			hidden_effect = {
+#				set_global_flag = play_CAL_global
+#				clr_global_flag = play_USC_global
+#			}			
+#		}
+#	}	
+#}
+
+debug_decisions = {
+	CAL_easy_game_setup = {
+		allowed = {
+			is_debug = yes
+		}	
+		visible = {
+			is_debug = yes
+			tag = USA
+		}	
+		complete_effect = {
+			set_global_flag = USA_shattered_union_global
+			country_event = usa.6	
+			CAL = {
+				change_tag_from = ROOT
+			}
+		}
+	}
+}
+
+CAL_fight_apla_category = {
+	CAL_defend_sanjose_mission = {
+		icon = GFX_decision_border_war
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+			NOT = {
+				controls_state = 1039
+			}
+		}
+		cancel_if_not_visible = no
+		is_good = no
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 75
+		cancel_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = -0.10
+			}
+			add_legit = yes
+			add_war_support = -0.10
+			add_stability = -0.15
+			add_political_power = -100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = 0.10
+			}
+			add_legit = yes
+			add_war_support = 0.10
+			add_stability = 0.15
+			add_political_power = 100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+	}
+	CAL_defend_sacramento_mission = {
+		icon = GFX_decision_border_war
+		available = {
+			always = no
+		}
+		cancel_trigger = {
+			NOT = {
+				controls_state = 941
+			}
+		}
+		cancel_if_not_visible = no
+		is_good = no
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 75
+		cancel_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = -0.10
+			}
+			add_legit = yes
+			add_war_support = -0.10
+			add_stability = -0.15
+			add_political_power = -100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = 0.10
+			}
+			add_legit = yes
+			add_war_support = 0.10
+			add_stability = 0.15
+			add_political_power = 100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+	}
+	CAL_liberate_los_angeles = {
+		icon = GFX_decision_border_war
+		available = {
+			controls_state = 930
+		}
+		cancel_trigger = {
+			always = no
+		}
+		cancel_if_not_visible = no
+		is_good = no
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 100
+		timeout_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = -0.10
+			}
+			add_legit = yes
+			add_war_support = -0.10
+			add_stability = -0.15
+			add_political_power = -100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = 0.10
+			}
+			add_legit = yes
+			add_war_support = 0.10
+			add_stability = 0.15
+			add_political_power = 100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+	}
+	CAL_liberate_frisco = {
+		icon = GFX_decision_border_war
+		available = {
+			controls_state = 932
+		}
+		cancel_trigger = {
+			always = no
+		}
+		cancel_if_not_visible = no
+		is_good = no
+		fire_only_once = yes
+		selectable_mission = no
+		days_mission_timeout = 100
+		timeout_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = -0.10
+			}
+			add_legit = yes
+			add_war_support = -0.10
+			add_stability = -0.15
+			add_political_power = -100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+		complete_effect = {
+			set_temp_variable = {
+				var = legit_var_temp
+				value = 0.10
+			}
+			add_legit = yes
+			add_war_support = 0.10
+			add_stability = 0.15
+			add_political_power = 100
+			hidden_effect = {
+				country_event = {
+					id = #later
+				}
+			}
+		}
+	}	
+}
+
+CAL_militia_loyalty = {
+	CAL_testing_testing = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		complete_effect = {
+					
+		}
+	}
+	CAL_give_militia_extra_weapons = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_dealing_with_militias
+			}
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+				producer = CAL
+			}			
+			add_to_variable = {
+				var = cali_militia_loyalty_var
+				value = 5
+				tooltip = add_to_cali_militia_loyalty_var
+			}
+			add_to_variable = {
+				var = cali_militia_power_var
+				value = 10
+				tooltip = add_to_cali_militia_power_var
+			}
+			set_country_flag = CD_is_dealing_with_militias
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_dealing_with_militias
+		}
+	}
+	CAL_empower_leftist_militias = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_dealing_with_militias
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25		
+		targeted_modifier = {
+			tag = APA
+			defense_bonus_against = -0.05
+		}	
+		complete_effect = {
+			subtract_from_variable = {
+				var = cali_militia_loyalty_var
+				value = 10
+				tooltip = sub_from_cali_militia_loyalty_var
+			}
+			subtract_from_variable = {
+				var = cali_militia_power_var
+				value = 5
+				tooltip = sub_from_cali_militia_power_var
+			}			
+			set_country_flag = CD_is_dealing_with_militias
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_dealing_with_militias
+		}
+	}
+	CAL_regulate_militias = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_dealing_with_militias
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			modifier_army_sub_unit_militia_attack_factor = -0.1
+			modifier_army_sub_unit_militia_defence_factor = -0.1
+		}
+		complete_effect = {
+			subtract_from_variable = {
+				var = cali_militia_power_var
+				value = 10
+				tooltip = sub_from_cali_militia_power_var
+			}			
+			set_country_flag = CD_is_dealing_with_militias
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_dealing_with_militias
+		}
+	}	
+	CAL_work_with_militias = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_dealing_with_militias
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			political_power_factor = -0.15
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = cali_militia_loyalty_var
+				value = 10
+				tooltip = add_to_cali_militia_loyalty_var
+			}			
+			set_country_flag = CD_is_dealing_with_militias
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_dealing_with_militias
+		}
+	}	
+	CAL_militia_questioning_loyalty = {
+		icon = GFX_decision_border_war
+		available = {
+			CLM = {
+				exists = yes
+			}
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 25
+		timeout_effect = {
+			activate_mission = CAL_militia_questioning_loyalty
+			subtract_from_variable = {
+				var = cali_militia_loyalty_var
+				value = 5
+				tooltip = sub_from_cali_militia_loyalty_var
+			}			
+		}
+	}
+	CAL_militia_gathering_support = {
+		icon = GFX_decision_border_war
+		available = {
+			CLM = {
+				exists = yes
+			}
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 25
+		timeout_effect = {
+			activate_mission = CAL_militia_gathering_support
+			add_to_variable = {
+				var = cali_militia_power_var
+				value = 5
+				tooltip = add_to_cali_militia_loyalty_var
+			}			
+		}
+	}	
+	CAL_militia_rising_up = {
+		icon = GFX_decision_border_war
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = CAL_militia_loyalty_is_safe		
+				check_variable = {
+					cali_militia_loyalty_var > 10
+				}				
+			}
+			custom_trigger_tooltip = {
+				tooltip = CAL_militia_power_is_safe		
+				check_variable = {
+					cali_militia_power_var < 80
+				}				
+			}			
+		}
+		is_good = no
+		selectable_mission = no
+		days_mission_timeout = 25
+		timeout_effect = {
+			custom_effect_tooltip = "Need to add this stuff lol"
+		}
+	}	
+}
+CAL_cali_legislature = {
+	CAL_cali_legislature_test = {
+		allowed = {
+		}	
+		visible = {
+		}	
+		complete_effect = {
+		}
+	}
+}
+
+CAL_economy_decisions = {
+	CAL_economy_decisions_test = {
+		allowed = {
+		}	
+		visible = {
+		}	
+		complete_effect = {
+		}
+	}
+}

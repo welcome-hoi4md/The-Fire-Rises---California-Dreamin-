@@ -1,0 +1,60 @@
+CAL_balance_of_power_category = {
+	allowed = {
+		tag = USB
+	}
+}
+
+CAL_fight_APLA_category = {
+	icon = #
+	visible_when_empty = yes
+	scripted_gui = #do later
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		has_completed_focus = focus_emergency_govt
+		NOT = {
+			OR = {
+				has_completed_focus = #uniting california suite of focuses
+			}
+		}
+	}
+	priority = 5
+}
+
+CAL_militia_loyalty = {
+	icon = #
+	visible_when_empty = yes
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		
+	}
+	priority = 5
+}
+
+CAL_cali_legislature = {
+	icon = #
+	visible_when_empty = yes
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		
+	}
+	priority = 5
+}
+
+#Need to find a better name idk
+CAL_economy_decisions = {
+	icon = #
+	visible_when_empty = yes
+	allowed = {
+		tag = CAL
+	}
+	visible = {
+		
+	}
+	priority = 5
+}
