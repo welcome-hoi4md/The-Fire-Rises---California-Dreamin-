@@ -44,9 +44,12 @@ debug_decisions = {
 	}
 }
 
-CAL_fight_apla_category = {
+USA_second_american_civil_war_category = {
 	CAL_defend_sanjose_mission = {
 		icon = GFX_decision_border_war
+		visible = {
+			has_completed_focus = focus_start_offensive
+		}
 		available = {
 			always = no
 		}
@@ -93,6 +96,9 @@ CAL_fight_apla_category = {
 	}
 	CAL_defend_sacramento_mission = {
 		icon = GFX_decision_border_war
+		visible = {
+			has_completed_focus = focus_defend_sacramento
+		}
 		available = {
 			always = no
 		}

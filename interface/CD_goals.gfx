@@ -63,4 +63,12 @@ spriteTypes = {
 		name = "GFX_focus_CAL_san_francisco_offensive"
 		texturefile = "gfx/interface/goals/CAL/CAL_san_francisco_offensive.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_CAL_employ_engineers"
+		texturefile = "gfx/interface/goals/CAL/CAL_employ_engineers.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_crime_crackdown"
+		texturefile = "gfx/interface/goals/CAL/CAL_crime_crackdown.png"
+	}
 }

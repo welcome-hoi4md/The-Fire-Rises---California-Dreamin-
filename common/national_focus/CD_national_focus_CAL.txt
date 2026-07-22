@@ -100,7 +100,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.10
-			# also attack bonuses n shit
+			activate_decision = CAL_defend_sanjose_mission
 			country_event = {
 				id = cd_cal.1
 			}
@@ -1970,6 +1970,7 @@ focus_tree = {
 		completion_reward = {
 			#manpower buffs
 			#defense buffs
+			activate_decision = CAL_defend_sacramento_mission
 		}
 	}
 	focus = {
