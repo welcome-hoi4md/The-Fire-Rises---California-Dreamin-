@@ -47,8 +47,15 @@ debug_decisions = {
 USA_second_american_civil_war_category = {
 	CAL_defend_sanjose_mission = {
 		icon = GFX_decision_border_war
-		visible = {
-			has_completed_focus = focus_start_offensive
+		activation = {
+			1039 = {
+				is_owned_by = CAL
+				any_neighbor_state = {
+					owner = {
+						has_war_with = CAL
+					}
+				}
+			}
 		}
 		available = {
 			always = no
@@ -96,8 +103,15 @@ USA_second_american_civil_war_category = {
 	}
 	CAL_defend_sacramento_mission = {
 		icon = GFX_decision_border_war
-		visible = {
-			has_completed_focus = focus_defend_sacramento
+		activation = {
+			941 = {
+				is_owned_by = CAL
+				any_neighbor_state = {
+					owner = {
+						has_war_with = CAL
+					}
+				}
+			}
 		}
 		available = {
 			always = no
@@ -145,6 +159,14 @@ USA_second_american_civil_war_category = {
 	}
 	CAL_liberate_los_angeles = {
 		icon = GFX_decision_border_war
+		activation = {
+			930 = {
+				NOT = { is_owned_by = CAL }
+				owner = {
+					has_war_with = CAL
+				}
+			}
+		}		
 		available = {
 			controls_state = 930
 		}
@@ -189,6 +211,14 @@ USA_second_american_civil_war_category = {
 	}
 	CAL_liberate_frisco = {
 		icon = GFX_decision_border_war
+		activation = {
+			932 = {
+				NOT = { is_owned_by = CAL }
+				owner = {
+					has_war_with = CAL
+				}
+			}		
+		}
 		available = {
 			controls_state = 932
 		}
@@ -461,14 +491,171 @@ CAL_militia_loyalty = {
 	}	
 }
 CAL_cali_legislature = {
-	CAL_cali_legislature_test = {
+	CAL_lobby_for_dnc_support = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_lobbying_already
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			political_power_factor = -0.05
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = cali_dnc_support_var
+				value = 0.05
+				tooltip = add_to_cali_dnc_support_var
+			}			
+			set_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}			
+		}
+	}	
+	CAL_lobby_for_gop_support = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_lobbying_already
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			political_power_factor = -0.05
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = cali_gop_support_var
+				value = 0.05
+				tooltip = add_to_cali_gop_support_var
+			}			
+			set_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}			
+		}
+	}
+	CAL_lobby_for_prog_support = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_lobbying_already
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			political_power_factor = -0.05
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = cali_prog_support_var
+				value = 0.05
+				tooltip = add_to_cali_prog_support_var
+			}			
+			set_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}			
+		}
+	}
+	CAL_lobby_for_secs_support = {
+		icon = USA_rally_support
+		allowed = {
+			original_tag = CAL
+		}
+		visible = {
+		
+		}
+		available = {
+			NOT = {
+				has_country_flag = CD_is_lobbying_already
+			}			
+		}
+		ai_will_do = {
+			base = 1000
+		}
+		cost = 25
+		days_remove = 25	
+		modifier = {
+			political_power_factor = -0.05
+		}
+		complete_effect = {
+			add_to_variable = {
+				var = cali_secs_support_var
+				value = 0.05
+				tooltip = add_to_cali_secs_support_var
+			}			
+			set_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}
+		}
+		remove_effect = {
+			clr_country_flag = CD_is_lobbying_already
+			hidden_effect = {
+				CAL_calc_legislature = yes
+			}			
+		}
+	}
+	CAL_cal_leg_test = {
 		allowed = {
 		}	
 		visible = {
 		}	
 		complete_effect = {
+			CAL_calc_legislature = yes
 		}
-	}
+	}	
 }
 
 CAL_economy_decisions = {

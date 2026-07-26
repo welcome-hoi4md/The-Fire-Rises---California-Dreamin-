@@ -337,13 +337,14 @@
  CAL_liberate_frisco:0 "Liberate San Francisco"
  
  CAL_cali_legislature:0 "California Legislature"
- CAL_cali_legislature_desc:0 "\n\n\n\n\n(Insert Image Here)\n\n\n\n\n\n\n\n(Insert Description Here)\n\n[GetCurrentDominantCaliLegParty]"
+ CAL_cali_legislature_desc:0 "\n\n\n\n\n(Insert Image)\n\n\n\n\n\n\n\nThe California State Legislature consists of the California House Of Representatives and the California Senate.\n\n£GFX_USB_liberal_texticon §CDemocratic Party§!\n          §OSupport:§! [?cali_dnc_support_var|+|%]\n          §pInfluance:§! [?cali_dnc_influance_var|+|%] (§YEffects:§! §OSocial Liberal§! Weekly:£boost_popularity_texticon [?cali_dnc_influance_var|.1|%])\n\n£GFX_USB_progressive   §sProgressives§!\n          §OSupport:§! [?cali_prog_support_var|+|%]\n          §pInfluance:§! [?cali_prog_influance_var|+|%] (§YEffects:§! §sSocial Democrat§! Weekly:£boost_popularity_texticon [?cali_prog_influance_var|.1|%]) \n\n£GFX_USB_conservative  §ARepublican Party§!\n          §OSupport:§! [?cali_gop_support_var|+|%]\n          §pInfluance:§! [?cali_gop_influance_var|+|%] (§YEffects:§! §BConservative§! Weekly:£boost_popularity_texticon [?cali_gop_influance_var|.1|%]) \n\n£GFX_USC_populist_texticon   §gSecessionists§!\n          §OSupport:§! [?cali_secs_support_var|+|%]\n          §pInfluance:§! [?cali_secs_influance_var|+|%]\n                    (§YEffects:§! §LAuthoritarian Democrat§! and §pLibertarian Socialist§!                       Weekly:£boost_popularity_texticon [?cali_secs_influance_half_var|.1|%])"
  
  #Triggers
  CAL_militia_loyalty_is_safe:0 "§GMilitia Loyalty§! > §Y10%§!"
  CAL_militia_power_is_safe:0 "§RMilitia Power§! < §Y80%§!"
  
  CD_is_dealing_with_militias:0 " §YIs Already Dealing With Militias§!"
+ CD_is_lobbying_already:0 " §YIs Already Lobbying§!"
  
  #Effects
  sub_from_cali_militia_loyalty_var:0 "Subtracts §R$RIGHT|0$§! From §GMilitia Loyalty§!"
@@ -352,3 +353,7 @@
  add_to_cali_militia_power_var:0 "Adds §R$RIGHT|0$§! To §RMilitia Power§!"
  sub_from_cali_militia_power_var:0 "Subtracts §R$RIGHT|0$§! From §RMilitia Power§!"
  
+ add_to_cali_dnc_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_liberal_texticon §CDemocrat§! Support"
+ add_to_cali_gop_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_conservative §ARepublican§! Support"
+ add_to_cali_prog_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_progressive §sProgressives§! Support"
+ add_to_cali_secs_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USC_populist_texticon §gSecessionists§! Support"

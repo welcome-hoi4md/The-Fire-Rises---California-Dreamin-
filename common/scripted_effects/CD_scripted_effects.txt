@@ -10,3 +10,110 @@ USA_civil_war_outbreak_effect = {
 		clr_global_flag = play_CAL_global
 	}
 }
+
+CAL_calc_legislature = {
+	if = {
+		limit = {
+			check_variable = {
+				cali_dnc_support_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_dnc_support_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_dnc_influance_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_dnc_influance_var
+			value = 1
+		}		
+	}	
+	if = {
+		limit = {
+			check_variable = {
+				cali_gop_support_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_gop_support_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_gop_influance_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_gop_influance_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_prog_support_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_prog_support_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_prog_influance_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_prog_influance_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_secs_support_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_secs_support_var
+			value = 1
+		}		
+	}
+	if = {
+		limit = {
+			check_variable = {
+				cali_secs_influance_var > 1
+			}
+		}
+		set_variable = {
+			var = cali_secs_influance_var
+			value = 1
+		}		
+	}
+	CAL_calc_the_half_shit = yes
+}
+
+CAL_calc_the_half_shit = {
+	set_variable = {
+		var = cali_secs_influance_var_temp
+		value = cali_secs_influance_var
+	}
+	multiply_variable = {
+		var = cali_secs_influance_var_temp
+		value = 0.5
+	}
+	set_variable = {
+		var = cali_secs_influance_half_var
+		value = cali_secs_influance_var_temp
+	}
+}

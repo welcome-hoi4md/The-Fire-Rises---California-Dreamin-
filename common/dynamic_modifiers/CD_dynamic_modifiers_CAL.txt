@@ -1,0 +1,13 @@
+CAL_secs_drift = {
+    authoritarian_democrat_drift = cali_secs_influance_half_var
+	libertarian_socialist = cali_secs_influance_half_var
+}
+CAL_gop_drift = {
+    conservative_drift = cali_gop_influance_var
+}
+CAL_dnc_drift = {
+    social_liberal_drift = cali_dnc_influance_var
+}
+CAL_prog_drift = {
+   social_democrat_drift = cali_prog_influance_var
+}
