@@ -357,3 +357,8 @@
  add_to_cali_gop_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_conservative §ARepublican§! Support"
  add_to_cali_prog_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_progressive §sProgressives§! Support"
  add_to_cali_secs_support_var:0 "Gains §G+$RIGHT|$§! £GFX_USC_populist_texticon §gSecessionists§! Support"
+
+ add_to_cali_dnc_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_liberal_texticon §CDemocrat§! Influance"
+ add_to_cali_gop_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_conservative §ARepublican§! Influance"
+ add_to_cali_prog_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_progressive §sProgressives§! Influance"
+ add_to_cali_secs_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USC_populist_texticon §gSecessionists§! Influance"
