@@ -131,6 +131,18 @@ characters={
 			id=-1
 		}
 	}
+	CAL_paul_e_tician={
+		portraits={
+			civilian={
+				large="GFX_portrait_CAL_paul_e_tician"
+			}
+		}
+		country_leader={
+			ideology=falangist
+			expire="1.1.1.1"
+			id=-1
+		}
+	}
 	CAL_evil_ass_reagan={
 		portraits={
 			civilian={

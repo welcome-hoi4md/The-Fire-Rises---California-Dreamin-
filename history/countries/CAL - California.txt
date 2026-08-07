@@ -20,6 +20,7 @@ recruit_character = CAL_louis_marinelli
 recruit_character = CAL_scott_witt
 recruit_character = CAL_ranger
 recruit_character = CAL_commie_nixon
+recruit_character = CAL_paul_e_tician
 recruit_character = CAL_evil_ass_reagan
 
 

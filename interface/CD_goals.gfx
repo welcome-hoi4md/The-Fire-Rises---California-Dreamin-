@@ -71,4 +71,116 @@ spriteTypes = {
 		name = "GFX_focus_CAL_crime_crackdown"
 		texturefile = "gfx/interface/goals/CAL/CAL_crime_crackdown.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_CAL_raise_militias"
+		texturefile = "gfx/interface/goals/CAL/CAL_raise_militias.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_special_forces"
+		texturefile = "gfx/interface/goals/CAL/CAL_special_forces.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_support_natguard"
+		texturefile = "gfx/interface/goals/CAL/CAL_support_natguard.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_shock_militias"
+		texturefile = "gfx/interface/goals/CAL/CAL_shock_militias.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_abandon_rangers"
+		texturefile = "gfx/interface/goals/CAL/CAL_abandon_rangers.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_invite_palantir"
+		texturefile = "gfx/interface/goals/CAL/CAL_invite_palantir.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_civ_industry"
+		texturefile = "gfx/interface/goals/CAL/CAL_civ_industry.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_socdem_negotiate"
+		texturefile = "gfx/interface/goals/CAL/CAL_socdem_negotiate.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_talks_with_wagner"
+		texturefile = "gfx/interface/goals/CAL/CAL_talks_with_wagner.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_talks_with_wagner"
+		texturefile = "gfx/interface/goals/CAL/CAL_talks_with_wagner.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_create_mechanized"
+		texturefile = "gfx/interface/goals/CAL/CAL_create_mechanized.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_support_unions"
+		texturefile = "gfx/interface/goals/CAL/CAL_support_unions.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_enviro_regulate"
+		texturefile = "gfx/interface/goals/CAL/CAL_enviro_regulate.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_create_mechanized"
+		texturefile = "gfx/interface/goals/CAL/CAL_create_mechanized.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_cut_taxes"
+		texturefile = "gfx/interface/goals/CAL/CAL_cut_taxes.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_tank_offensive"
+		texturefile = "gfx/interface/goals/CAL/CAL_tank_offensive.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_republican_negotiate"
+		texturefile = "gfx/interface/goals/CAL/CAL_republican_negotiate.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_shock_and_awe"
+		texturefile = "gfx/interface/goals/CAL/CAL_shock_and_awe.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_fight_gangs"
+		texturefile = "gfx/interface/goals/CAL/CAL_fight_gangs.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_secessionists_left"
+		texturefile = "gfx/interface/goals/CAL/CAL_secessionists_left.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_secessionists_right"
+		texturefile = "gfx/interface/goals/CAL/CAL_secessionists_right.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_organize_militias"
+		texturefile = "gfx/interface/goals/CAL/CAL_organize_militias.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_ai_revolution"
+		texturefile = "gfx/interface/goals/CAL/CAL_ai_revolution.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_partisan_warfare"
+		texturefile = "gfx/interface/goals/CAL/CAL_partisan_warfare.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_reward_loyalty"
+		texturefile = "gfx/interface/goals/CAL/CAL_reward_loyalty.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_combined_arms_doctrine"
+		texturefile = "gfx/interface/goals/CAL/CAL_combined_arms_doctrine.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_traditional_warfare"
+		texturefile = "gfx/interface/goals/CAL/CAL_traditional_warfare.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_finish_military_reform"
+		texturefile = "gfx/interface/goals/CAL/CAL_finish_military_reform.png"
+	}
 }

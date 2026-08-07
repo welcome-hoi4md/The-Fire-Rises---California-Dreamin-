@@ -1,0 +1,108 @@
+ideas = {
+    country = {
+		CAL_electric_mechs = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				army_fuel_consumption_factor = -0.15
+			}
+			equipment_bonus = {
+				light_mechanized = {
+					instant = yes
+					maximum_speed = -0.10
+					build_cost_ic = 0.15
+					reliability = 0.15
+				}
+			}
+		}
+        CAL_quelling_inferno_idea = {
+            picture = CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+			allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                command_power_gain_mult = 0.1
+                army_org_factor = 0.15
+                army_attack_factor = 0.1
+                supply_consumption_factor = -0.1
+                experience_gain_army_unit_factor = 0.25
+            }
+        }
+		CAL_defend_sacramento_idea = {
+            picture = CAL_defend_sacramento
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+			allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+				conscription_factor = 0.1
+				mobilization_speed = 0.1
+				max_dig_in_factor = 0.1
+                army_org_factor = 0.1
+				army_defence_factor = 0.15
+            }
+        }
+		CAL_cascades_offensive_idea = {
+            picture = CAL_cascades_offensive
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+			allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_org_regain = 0.15
+                org_loss_when_moving = -0.1
+                army_speed_factor = 0.1
+            }
+            targeted_modifier = {
+                tag = BGF
+                attack_bonus_against = 0.2
+                breakthrough_bonus_against = 0.2
+            }
+        }
+		CAL_la_offensive_idea = {
+            picture = CAL_la_offensive
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+			allowed_civil_war = {
+                always = yes
+            }
+            modifier = {
+                army_org_regain = 0.15
+                org_loss_when_moving = -0.1
+                army_speed_factor = 0.1
+            }
+            targeted_modifier = {
+                tag = RPP
+                attack_bonus_against = 0.15
+                breakthrough_bonus_against = 0.15
+            }
+			targeted_modifier = {
+                tag = RGA
+                attack_bonus_against = 0.15
+                breakthrough_bonus_against = 0.15
+            }
+        }
+    }
+}

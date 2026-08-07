@@ -194,9 +194,9 @@
  CAL_focus_support_natguard_desc: "debug"
  CAL_focus_raise_militias: "Raise Militias"
  CAL_focus_raise_militias_desc: "debug"
- CAL_focus_shock_militias: "Employ Shock Militias"
- CAL_focus_shock_militias_desc: "debug"
- CAL_focus_abandon_rangers: "Abandon The Rangers"
+ CAL_focus_shock_militias: "Employ the New California Rangers"
+ CAL_focus_shock_militias_desc: "The New California Rangers are a prominent libertarian militia that have gained popularity in the last two years. They’re known for being uncompromising in their desire for liberty, their brutal military discipline and tactics, heavy use of explosives, and being led by an unknown masked figure, who calls himself “The Ranger”. It would be foolish to not employ this militia to fight for the same liberty we all want, or otherwise give them reason to side with the California State Militia. We must fight together alongside the New California Rangers, so that we can rebuild California, as a free state for all."
+ CAL_focus_abandon_rangers: "Abandon The Militants"
  CAL_focus_abandon_rangers_desc: "debug"
  CAL_focus_create_mechanized: "Deploy Mechanized Units"
  CAL_focus_create_mechanized_desc: "debug"
@@ -277,8 +277,8 @@
  cd_cal_news.1.a: "Our republic will not fall this time. Not now, not ever."
  cd_cal_news.1.b: "Let's see it last more than three weeks!"
  #Cosmetic
- CAL_secessionist: "Republic of California"
- CAL_secessionist_DEF: "the Republic of California"
+ CAL_secessionist: "California Republic"
+ CAL_secessionist_DEF: "the California Republic"
  CAL_secessionist_ADJ: "Californian"
  CAL_militia: "Californian Military Administration"
  CAL_militia_DEF: "the Californian Military Administration"
@@ -340,11 +340,12 @@
  CAL_cali_legislature_desc:0 "\n\n\n\n\n(Insert Image)\n\n\n\n\n\n\n\nThe California State Legislature consists of the California House Of Representatives and the California Senate.\n\n£GFX_USB_liberal_texticon §CDemocratic Party§!\n          §OSupport:§! [?cali_dnc_support_var|+|%]\n          §pInfluance:§! [?cali_dnc_influance_var|+|%] (§YEffects:§! §OSocial Liberal§! Weekly:£boost_popularity_texticon [?cali_dnc_influance_var|.1|%])\n\n£GFX_USB_progressive   §sProgressives§!\n          §OSupport:§! [?cali_prog_support_var|+|%]\n          §pInfluance:§! [?cali_prog_influance_var|+|%] (§YEffects:§! §sSocial Democrat§! Weekly:£boost_popularity_texticon [?cali_prog_influance_var|.1|%]) \n\n£GFX_USB_conservative  §ARepublican Party§!\n          §OSupport:§! [?cali_gop_support_var|+|%]\n          §pInfluance:§! [?cali_gop_influance_var|+|%] (§YEffects:§! §BConservative§! Weekly:£boost_popularity_texticon [?cali_gop_influance_var|.1|%]) \n\n£GFX_USC_populist_texticon   §gSecessionists§!\n          §OSupport:§! [?cali_secs_support_var|+|%]\n          §pInfluance:§! [?cali_secs_influance_var|+|%]\n                    (§YEffects:§! §LAuthoritarian Democrat§! and §pLibertarian Socialist§!                       Weekly:£boost_popularity_texticon [?cali_secs_influance_half_var|.1|%])"
  
  #Triggers
+ 
+ #Triggers
  CAL_militia_loyalty_is_safe:0 "§GMilitia Loyalty§! > §Y10%§!"
  CAL_militia_power_is_safe:0 "§RMilitia Power§! < §Y80%§!"
  
  CD_is_dealing_with_militias:0 " §YIs Already Dealing With Militias§!"
- CD_is_lobbying_already:0 " §YIs Already Lobbying§!"
  
  #Effects
  sub_from_cali_militia_loyalty_var:0 "Subtracts §R$RIGHT|0$§! From §GMilitia Loyalty§!"
@@ -362,3 +363,8 @@
  add_to_cali_gop_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_conservative §ARepublican§! Influance"
  add_to_cali_prog_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_progressive §sProgressives§! Influance"
  add_to_cali_secs_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USC_populist_texticon §gSecessionists§! Influance"
+ 
+#Tooltips
+CAL_rangers_angry_tt: "The §YNew California Rangers§! will side with the §RCalifornia State Militia,§! against the §GState Government.§!"
+CAL_rangers_happy_tt: "The §YNew California Rangers§! will side with the §GState Government,§! against the §RCalifornia State Militia.§!"
+# §Ggreen text§! §Rred text§! §Yyellow text§!
