@@ -17,6 +17,152 @@ ideas = {
 				}
 			}
 		}
+		CAL_militia_priority = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				recruitable_population_factor = 0.05
+				modifier_army_sub_unit_militia_attack_factor = 0.05
+				modifier_army_sub_unit_militia_defence_factor = 0.05
+				training_time_factor = -0.05
+			}
+		}
+		CAL_militia_priority_2 = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				recruitable_population_factor = 0.05
+				modifier_army_sub_unit_militia_attack_factor = 0.15
+				modifier_army_sub_unit_militia_defence_factor = 0.15
+				training_time_factor = -0.05
+				experience_loss_factor = 0.05
+				initiative_factor = 0.05
+				land_night_attack = 0.5
+			}
+		}
+		CAL_nat_guard_priority = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				motorized_attack_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+		}
+		CAL_nat_guard_priority_2 = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				motorized_attack_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+				army_infantry_defence_factor = 0.05
+				mechanized_attack_factor = 0.1
+				mechanized_defence_factor = 0.1
+			}
+		}
+		CAL_nat_guard_priority_3 = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				motorized_attack_factor = 0.15
+				army_infantry_attack_factor = 0.15
+				motorized_defence_factor = 0.15
+				army_infantry_defence_factor = 0.15
+				mechanized_attack_factor = 0.15
+				mechanized_defence_factor = 0.15
+			}
+		}		
+		CAL_armoured_offensive = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				army_armor_speed_factor = 0.15
+				army_armor_attack_factor = 0.15
+			}
+		}
+		CAL_militia_org_before = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = -0.25
+				modifier_army_sub_unit_militia_defence_factor = -0.25
+			}
+			on_remove = {
+				add_ideas = CAL_militia_org_after
+			}
+		}	
+		CAL_militia_org_after = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				modifier_army_sub_unit_militia_attack_factor = 0.15
+				modifier_army_sub_unit_militia_defence_factor = 0.15
+				army_org_factor = 0.1
+				experience_gain_army_unit = 0.5
+			}
+		}		
+		CAL_special_forces = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				special_forces_training_time_factor = -0.1
+				special_forces_cap = 0.25
+			}
+		}
+		CAL_california_rangers = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				mountaineers_special_forces_contribution_factor = -0.5
+				modifier_army_sub_unit_mountaineers_attack_factor = 0.05
+			}
+		}
+		CAL_partisan_warfare = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				resistance_target_on_our_occupied_states = 0.2
+				resistance_growth_on_our_occupied_states = 0.35
+				army_core_attack_factor = 0.15
+			}
+		}
+		CAL_modern_american_army = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = FLA
+			}
+			modifier = {
+				offence = 0.1
+				defence = 0.1
+				army_org_factor = 0.05
+				military_development_monthly = 0.05
+				recruitable_population_factor = 0.05
+			}
+		}		
         CAL_quelling_inferno_idea = {
             picture = CAL_quelling_inferno
             traits = {

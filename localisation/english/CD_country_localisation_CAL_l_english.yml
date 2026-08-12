@@ -364,6 +364,9 @@
  add_to_cali_prog_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USB_progressive §sProgressives§! Influance"
  add_to_cali_secs_influance_var:0 "Gains §G+$RIGHT|$§! £GFX_USC_populist_texticon §gSecessionists§! Influance"
  
+ CAL_focus_combined_arms_doctrine_random_traits:0 "(3 §YRandom Generals§!):\n   Gains §YCavalry Leader§! §ROR§! §YPanzer Leader§!\n   Gains §YCombined Arms Expert§!"
+ CAL_focus_organize_militias_idea_effect:0 "After §Y35§! day(s):"
+ 
 #Tooltips
 CAL_rangers_angry_tt: "The §YNew California Rangers§! will side with the §RCalifornia State Militia,§! against the §GState Government.§!"
 CAL_rangers_happy_tt: "The §YNew California Rangers§! will side with the §GState Government,§! against the §RCalifornia State Militia.§!"

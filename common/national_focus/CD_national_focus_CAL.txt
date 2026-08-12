@@ -2346,7 +2346,7 @@ focus_tree = {
 		x = -3
 		y = 1
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2354,6 +2354,7 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			add_ideas = CAL_nat_guard_priority			
 		}
 	}
 	focus = {
@@ -2366,7 +2367,7 @@ focus_tree = {
 		x = -4
 		y = 0
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2374,6 +2375,17 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			add_ideas = CAL_militia_priority
+			add_to_variable = {
+				var = cali_militia_loyalty_var
+				value = 5
+				tooltip = add_to_cali_militia_loyalty_var
+			}
+			add_to_variable = {
+				var = cali_militia_power_var
+				value = 5
+				tooltip = add_to_cali_militia_power_var
+			}			
 		}
 	}
 	focus = {
@@ -2386,7 +2398,7 @@ focus_tree = {
 		x = -3
 		y = 1
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2394,7 +2406,23 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		custom_effect_tooltip = CAL_rangers_happy_tt
+			custom_effect_tooltip = CAL_rangers_happy_tt
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = mountaineers_tech
+			}
+			add_ideas = CAL_california_rangers
+			add_to_variable = {
+				var = cali_militia_loyalty_var
+				value = 15
+				tooltip = add_to_cali_militia_loyalty_var
+			}
+			add_to_variable = {
+				var = cali_militia_power_var
+				value = 5
+				tooltip = add_to_cali_militia_power_var
+			}			
 		}
 	}
 	focus = {
@@ -2407,7 +2435,7 @@ focus_tree = {
 		x = -1
 		y = 1
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2416,6 +2444,16 @@ focus_tree = {
 		}
 		completion_reward = {
 		custom_effect_tooltip = CAL_rangers_angry_tt
+			subtract_from_variable = {
+				var = cali_militia_loyalty_var
+				value = 15
+				tooltip = sub_from_cali_militia_loyalty_var
+			}
+			subtract_from_variable = {
+				var = cali_militia_power_var
+				value = 5
+				tooltip = sub_from_cali_militia_power_var
+			}		
 		}
 	}
 	focus = {
@@ -2428,7 +2466,7 @@ focus_tree = {
 		x = 1
 		y = 1
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2436,6 +2474,10 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = CAL_nat_guard_priority_2
+				remove_idea = CAL_nat_guard_priority
+			}
 		}
 	}
 	focus = {
@@ -2447,15 +2489,38 @@ focus_tree = {
 		x = -2
 		y = 2
 
-		cost = 1
-
+		cost = 5
+		cancelable = no
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
+			has_army_experience > 40
+		}
+		select_effect = {
+			hidden_effect = {
+				add_timed_idea = {
+					idea = CAL_militia_org_before
+					days = 35
+				}			
+			}
 		}
 		completion_reward = {
-		#organization & mp buffs
+			set_division_template_lock = {
+				division_template = "Foot Militia"
+				is_locked = no
+			}
+			army_experience = -40
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = CAL_militia_org_before
+					days = 35
+				}			
+			}	
+			custom_effect_tooltip = CAL_focus_organize_militias_idea_effect
+			effect_tooltip = {
+				add_ideas = CAL_militia_org_after
+			}
 		}
 	}
 	focus = {
@@ -2467,7 +2532,7 @@ focus_tree = {
 		x = 0
 		y = 2
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2475,8 +2540,10 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#gives tanks
-		#buffs tanks
+			add_timed_idea = {
+				idea = CAL_armoured_offensive
+				days = 150
+			}			
 		}
 	}
 	focus = {
@@ -2488,7 +2555,7 @@ focus_tree = {
 		x = -5
 		y = 1
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2496,8 +2563,18 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#gives tanks
-		#buffs tanks
+			#Creates Good, Air Assult, and Marine template
+			add_ideas = CAL_special_forces
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = para_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = marine_tech
+			}			
 		}
 	}
 	focus = {
@@ -2509,7 +2586,7 @@ focus_tree = {
 		x = -4
 		y = 2
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2517,7 +2594,19 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#spawns russian special forces divisions
+			#spawns russian special forces divisions
+			load_oob = CAL_wagner_support
+			set_temp_variable = {
+				var = legit_var_temp
+				value = -0.05
+			}
+			add_legit = yes
+			add_political_power = -25
+			set_temp_variable = {
+                var = debt_var_temp
+                value = 5
+            }
+            add_debt_with_inflation = yes
 		}
 	}
 	focus = {
@@ -2526,12 +2615,12 @@ focus_tree = {
 		relative_position_id = CAL_focus_support_natguard
 		prerequisite = { focus = CAL_focus_talks_with_wagner focus = CAL_focus_organize_militias }
 		
-		mutually_exclusive = { focus = focus_traditional_warfare }
+		mutually_exclusive = { focus = CAL_focus_traditional_warfare }
 	
 		x = -3
 		y = 3
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2539,7 +2628,15 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			set_grand_doctrine = assymetric_warfare
+			add_mastery = {
+				amount = 100
+				grand_doctrine = assymetric_warfare
+			}		
+			add_timed_idea = {
+				idea = CAL_partisan_warfare
+				days = 150
+			}
 		}
 	}
 	focus = {
@@ -2553,7 +2650,7 @@ focus_tree = {
 		x = -1
 		y = 3
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2561,7 +2658,12 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			set_grand_doctrine = nato_western_doctrine
+			add_mastery = {
+				amount = 100
+				grand_doctrine = nato_western_doctrine
+			}
+			army_experience = 50
 		}
 	}
 	focus = {
@@ -2573,7 +2675,7 @@ focus_tree = {
 		x = 1
 		y = 3
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2581,7 +2683,26 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			#buffs
+			custom_effect_tooltip = CAL_focus_combined_arms_doctrine_random_traits
+			hidden_effect = {
+				random_unit_leader = {
+					add_random_trait = { cavalry_leader panzer_leader }
+					add_unit_leader_trait = combined_arms_expert
+				}
+				random_unit_leader = {
+					add_random_trait = { cavalry_leader panzer_leader }
+					add_unit_leader_trait = combined_arms_expert
+				}
+				random_unit_leader = {
+					add_random_trait = { cavalry_leader panzer_leader }
+					add_unit_leader_trait = combined_arms_expert
+				}
+			}
+			swap_ideas = {
+				add_idea = CAL_nat_guard_priority_3
+				remove_idea = CAL_nat_guard_priority_2
+			}			
 		}
 	}
 	focus = {
@@ -2593,7 +2714,7 @@ focus_tree = {
 		x = -5
 		y = 3
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2601,7 +2722,11 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			#buffs
+			swap_ideas = {
+				add_idea = CAL_militia_priority_2
+				remove_idea = CAL_militia_priority
+			}
 		}
 	}
 	focus = {
@@ -2614,15 +2739,17 @@ focus_tree = {
 		x = -2
 		y = 4
 
-		cost = 1
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
 		}
-		completion_reward = {
-		#buffs
+		completion_reward = {	
+			add_ideas = CAL_modern_american_army
+			army_experience = 50
+			add_political_power = 50
 		}
 	}
 	#Military Tree, air force
