@@ -11,3 +11,27 @@ CAL_dnc_drift = {
 CAL_prog_drift = {
    social_democrat_drift = cali_prog_influance_var
 }
+
+CAL_eco_idea = {
+	icon = GFX_idea_CAL_quelling_inferno
+	enable = {
+		tag = CAL
+	}	
+	production_speed_buildings_factor = CAL_eco_idea_production_speed_buildings_factor_var
+	consumer_goods_factor = CAL_eco_idea_consumer_goods_factor_var
+	industrial_capacity_factory = CAL_eco_idea_industrial_capacity_factory_var
+	income_growth_factor = CAL_eco_idea_income_growth_factor_var	
+	production_factory_efficiency_gain_factor = CAL_eco_idea_production_factory_efficiency_gain_factor_var
+	production_speed_rail_way_factor = CAL_eco_idea_production_speed_rail_way_factor_var	
+	production_lack_of_resource_penalty_factor = CAL_eco_idea_production_lack_of_resource_penalty_factor_var
+	production_factory_max_efficiency_factor = CAL_eco_idea_production_factory_max_efficiency_factor_var
+	recruitable_population_factor = CAL_eco_idea_recruitable_population_factor_var
+	factory_energy_consumption = CAL_eco_idea_factory_energy_consumption_var
+	research_speed_factor = CAL_eco_idea_research_speed_factor_var
+	civilian_intel_decryption_bonus = CAL_eco_idea_civilian_intel_decryption_bonus_var
+	civilian_intel_to_others = CAL_eco_idea_civilian_intel_to_others_var
+	production_speed_industrial_complex_factor = CAL_eco_idea_production_speed_industrial_complex_factor_var
+	production_speed_arms_factory_factor = CAL_eco_idea_production_speed_arms_factory_factor_var
+	business_value_factor = CAL_eco_idea_business_value_factor_var
+	personal_value_factor = CAL_eco_idea_personal_value_factor_var
+}

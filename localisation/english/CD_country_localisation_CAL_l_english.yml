@@ -367,6 +367,9 @@
  CAL_focus_combined_arms_doctrine_random_traits:0 "(3 §YRandom Generals§!):\n   Gains §YCavalry Leader§! §ROR§! §YPanzer Leader§!\n   Gains §YCombined Arms Expert§!"
  CAL_focus_organize_militias_idea_effect:0 "After §Y35§! day(s):"
  
+ CAL_focus_tesla_negotiations_effect:0 "After §Y150§! day(s):\n    If §YElon Musk§! is §RNOT§! an available §YEconomic Minister§! for §Y[USC.GetName]§!:"
+ CAL_focus_ai_revolution_effect:0 "After every §Y150§! day(s):\n    These §Ybonuses§! will be repeated §Yautomatically§! unless stopped"
+ 
 #Tooltips
 CAL_rangers_angry_tt: "The §YNew California Rangers§! will side with the §RCalifornia State Militia,§! against the §GState Government.§!"
 CAL_rangers_happy_tt: "The §YNew California Rangers§! will side with the §GState Government,§! against the §RCalifornia State Militia.§!"

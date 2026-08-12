@@ -1781,7 +1781,27 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			change_economy_type_oligopolistic_capitalism = yes
+			effect_tooltip = {
+				add_Ideas = CAL_focus_court_silicon_valley_idea
+			}
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = CAL_eco_idea
+				}
+				set_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = 0.1
+				}
+				set_variable = {
+					var = CAL_eco_idea_income_growth_factor_var
+					value = -0.05
+				}
+				set_variable = {
+					var = CAL_eco_idea_production_lack_of_resource_penalty_factor_var
+					value = -0.05
+				}				
+			}
 		}
 	}
 	focus = {
@@ -1801,7 +1821,26 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 932
+						state = 1039
+						state = 949
+					}
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}				
+			}
 		}
 	}
 	focus = {
@@ -1822,6 +1861,35 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
+			#Gotham is Plantir's intel OS, GFX needs to be made for it
+			create_intelligence_agency = {
+				name = "Gotham"
+				icon = GFX_intelligence_agency_logo_agency
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = GFX_focus_CAL_invite_palantir_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = 0.05
+				}			
+				add_to_variable = {
+					var = CAL_eco_idea_civilian_intel_decryption_bonus_var
+					value = 10.0
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_civilian_intel_to_others_var
+					value = -15.0
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_production_speed_buildings_factor_var
+					value = 0.05
+				}				
+			}			
 		}
 	}
 	focus = {
@@ -1842,7 +1910,26 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_reward_loyalty_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_business_value_factor_var
+					value = -0.15
+				}			
+				add_to_variable = {
+					var = CAL_eco_idea_personal_value_factor_var
+					value = 0.15
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_production_factory_max_efficiency_factor_var
+					value = 0.1
+				}				
+			}			
 		}
 	}
 	focus = {
@@ -1863,7 +1950,12 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			add_timed_idea = {
+				idea = CAL_tesla_support
+				days = 150
+			}
+			custom_effect_tooltip = CAL_focus_tesla_negotiations_effect
+			#Add Elong Dong Musky As possible Eco Minister
 		}
 	}
 	focus = {
@@ -1883,7 +1975,35 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_ai_revolution_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = -0.05
+				}			
+				add_to_variable = {
+					var = CAL_eco_idea_production_factory_max_efficiency_factor_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_research_speed_factor_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_factory_energy_consumption_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_recruitable_population_factor_var
+					value = 0.1
+				}				
+			}
+			custom_effect_tooltip = CAL_focus_ai_revolution_effect
 		}
 	}
 	focus = {
@@ -1925,7 +2045,22 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_consumer_industry_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_production_speed_industrial_complex_factor_var
+					value = 0.15
+				}			
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = 0.1
+				}				
+			}
 		}
 	}
 	focus = {
@@ -1943,9 +2078,22 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-		}
+		} 
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_hightech_appliances_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = 0.15
+				}
+			}
+			add_stability = 0.05
+			increase_police = yes
 		}
 	}
 	#Le holsum regulation path#
