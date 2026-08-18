@@ -339,6 +339,13 @@
  CAL_cali_legislature:0 "California Legislature"
  CAL_cali_legislature_desc:0 "\n\n\n\n\n(Insert Image)\n\n\n\n\n\n\n\nThe California State Legislature consists of the California House Of Representatives and the California Senate.\n\n£GFX_USB_liberal_texticon §CDemocratic Party§!\n          §OSupport:§! [?cali_dnc_support_var|+|%]\n          §pInfluance:§! [?cali_dnc_influance_var|+|%] (§YEffects:§! §OSocial Liberal§! Weekly:£boost_popularity_texticon [?cali_dnc_influance_var|.1|%])\n\n£GFX_USB_progressive   §sProgressives§!\n          §OSupport:§! [?cali_prog_support_var|+|%]\n          §pInfluance:§! [?cali_prog_influance_var|+|%] (§YEffects:§! §sSocial Democrat§! Weekly:£boost_popularity_texticon [?cali_prog_influance_var|.1|%]) \n\n£GFX_USB_conservative  §ARepublican Party§!\n          §OSupport:§! [?cali_gop_support_var|+|%]\n          §pInfluance:§! [?cali_gop_influance_var|+|%] (§YEffects:§! §BConservative§! Weekly:£boost_popularity_texticon [?cali_gop_influance_var|.1|%]) \n\n£GFX_USC_populist_texticon   §gSecessionists§!\n          §OSupport:§! [?cali_secs_support_var|+|%]\n          §pInfluance:§! [?cali_secs_influance_var|+|%]\n                    (§YEffects:§! §LAuthoritarian Democrat§! and §pLibertarian Socialist§!                       Weekly:£boost_popularity_texticon [?cali_secs_influance_half_var|.1|%])"
  
+ CAL_ensure_worker_safety:0 "Ensure Worker Safety"
+ CAL_ensure_worker_safety_desc:0 "Need to add desc"
+ CAL_find_hazards_timeout:0 "Searching For An Issue"
+ CAL_find_hazards_timeout_desc:0 ""
+ CAL_check_state_for_issue:0 "Check [FROM.GetName] For Issue"
+ CAL_check_state_for_issue_desc:0 ""
+ 
  #Triggers
  
  #Triggers
@@ -346,6 +353,10 @@
  CAL_militia_power_is_safe:0 "§RMilitia Power§! < §Y80%§!"
  
  CD_is_dealing_with_militias:0 " §YIs Already Dealing With Militias§!"
+ 
+ CAL_CD_looking_for_hazards:0 "Is Looking For Hazards"
+ CD_currently_looking_for_issue_trigger:0 "Is Already Investigating States"
+ CD_CAL_found_a_hazard:0 "Has Found An Issue"
  
  #Effects
  sub_from_cali_militia_loyalty_var:0 "Subtracts §R$RIGHT|0$§! From §GMilitia Loyalty§!"
@@ -370,7 +381,15 @@
  CAL_focus_tesla_negotiations_effect:0 "After §Y150§! day(s):\n    If §YElon Musk§! is §RNOT§! an available §YEconomic Minister§! for §Y[USC.GetName]§!:"
  CAL_focus_ai_revolution_effect:0 "After every §Y150§! day(s):\n    These §Ybonuses§! will be repeated §Yautomatically§! unless stopped"
  
+ CAL_focus_corporate_accountability_effect_tt:0 "    This Decision will trigger a §Ymission§! that if completed grants:"
+ CAL_focus_corporate_accountability_effect_second_tt:0 "    If the §Ymission§! is not completed it grants:"
+ 
 #Tooltips
 CAL_rangers_angry_tt: "The §YNew California Rangers§! will side with the §RCalifornia State Militia,§! against the §GState Government.§!"
 CAL_rangers_happy_tt: "The §YNew California Rangers§! will side with the §GState Government,§! against the §RCalifornia State Militia.§!"
+
+ has_united_california_tt:0 "Has United California"
 # §Ggreen text§! §Rred text§! §Yyellow text§!
+
+ #Ideas
+ CAL_eco_idea:0 "Californian Economy"

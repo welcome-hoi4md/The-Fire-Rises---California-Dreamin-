@@ -1868,7 +1868,7 @@ focus_tree = {
 			}
 			effect_tooltip = {
 				swap_ideas = {
-					add_idea = GFX_focus_CAL_invite_palantir_idea
+					add_idea = CAL_invite_palantir_idea
 					remove_idea = CAL_eco_idea_dummy_idea
 				}
 			}
@@ -2024,7 +2024,22 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = rocketry
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = suicide_drone_tech1
+					}
+				}
+				set_technology = {
+					suicide_drone_tech1 = 1
+				}				
+			}
+			add_ideas = CAL_ai_drones
 		}
 	}
 	focus = {
@@ -2115,7 +2130,31 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			change_economy_type_welfare_capitalism = yes
+			effect_tooltip = {
+				add_Ideas = CAL_focus_regulate_corporations_idea
+			}
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = CAL_eco_idea
+				}
+				set_variable = {
+					var = CAL_eco_idea_income_growth_factor_var
+					value = -0.05
+				}
+				set_variable = {
+					var = CAL_eco_idea_business_value_factor_var
+					value = 0.05
+				}
+				set_variable = {
+					var = CAL_eco_idea_production_factory_max_efficiency_factor_var
+					value = -0.05
+				}
+				set_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = -0.1
+				}				
+			}			
 		}
 	}
 	focus = {
@@ -2136,7 +2175,24 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			set_temp_variable = {
+                var = debt_var_temp
+                value = -5
+            }
+            add_debt_with_inflation = yes	
+			add_political_power = 50
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_let_palantir_burn_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}		
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_research_speed_factor_var
+					value = -0.05
+				}				
+			}
 		}
 	}
 	focus = {
@@ -2156,7 +2212,63 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_convert_computer_factories_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}		
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_conversion_cost_civ_to_mil_factor_var
+					value = -0.15
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					industrial_complex > 1
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}					
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					industrial_complex > 1					
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}				
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}				
+			}
+			random_owned_state = {
+				limit = {
+					industrial_complex > 1					
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}					
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}				
+			}			
 		}
 	}
 	focus = {
@@ -2176,7 +2288,26 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_fund_local_industry_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}		
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = -0.05
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_production_speed_arms_factory_factor_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_production_speed_industrial_complex_factor_var
+					value = 0.1
+				}				
+			}			
 		}
 	}
 	focus = {
@@ -2195,9 +2326,40 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
+			has_united_california = yes
 		}
 		completion_reward = {
-		#buffs
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 378
+						state = 1089
+						state = 950
+						state = 948
+						state = 947
+						state = 942
+						state = 941
+						state = 954
+						state = 949
+						state = 932
+						state = 1039
+						state = 943
+						state = 1040
+						state = 944
+						state = 953
+						state = 945
+						state = 1298
+						state = 930
+						state = 946
+						state = 952
+					    state = 951
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = CAL_timed_state_development_buff
+					days = 365
+				}			
+			}
 		}
 	}
 	focus = {
@@ -2216,9 +2378,19 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
+			has_united_california = yes
+			#OR = {
+			#	is_in_faction_with = USC
+			#	is_in_faction_with = USB
+			#	#is_in_faction_with = FLA (TSR Reference lol)
+			#}
 		}
 		completion_reward = {
-		#buffs
+			add_opinion_modifier = {
+				target = USB
+				modifier = large_increase
+			}
+			add_ideas = CAL_federal_support
 		}
 	}
 	focus = {
@@ -2238,7 +2410,22 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = rocketry
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_tech = suicide_drone_tech1
+					}
+				}
+				set_technology = {
+					suicide_drone_tech1 = 1
+				}				
+			}
+			add_ideas = CAL_human_drones
 		}
 	}
 	focus = {
@@ -2257,7 +2444,22 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			add_political_power = 150
+			unlock_decision_tooltip = CAL_ensure_worker_safety
+			custom_effect_tooltip = CAL_focus_corporate_accountability_effect_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = CAL_holding_unsafe_companies_accountable
+					days = 50
+				}
+			}
+			custom_effect_tooltip = CAL_focus_corporate_accountability_effect_second_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = CAL_worker_safty_ensured
+					days = 50
+				}			
+			}
 		}
 	}
 	focus = {
@@ -2276,7 +2478,22 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			effect_tooltip = {
+				swap_ideas = {
+					add_idea = CAL_focus_threaten_corporations_idea
+					remove_idea = CAL_eco_idea_dummy_idea
+				}
+			}		
+			hidden_effect = {
+				add_to_variable = {
+					var = CAL_eco_idea_consumer_goods_factor_var
+					value = -0.05
+				}
+				add_to_variable = {
+					var = CAL_eco_idea_business_value_factor_var
+					value = 0.15
+				}				
+			}
 		}
 	}
 	focus = {
@@ -2295,7 +2512,11 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			add_political_power = 50
+			add_timed_idea = {
+				idea = CAL_anti_lobbying_effort
+				years = 2
+			}		
 		}
 	}
 	focus = {
@@ -2314,7 +2535,16 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-		#buffs
+			if = {
+				limit = {
+					NOT = {
+						has_tech = suicide_drone_tech2
+					}
+				}
+				set_technology = {
+					suicide_drone_tech2 = 1
+				}				
+			}
 		}
 	}
 	focus = {

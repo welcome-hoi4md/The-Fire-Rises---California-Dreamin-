@@ -253,12 +253,79 @@ ideas = {
 		CAL_tesla_support = {
 			picture = APA_mechanized
 			allowed = {
-				original_tag = FLA
+				original_tag = CAL
 			}
 			modifier = {
 				consumer_goods_factor = 0.1
 				income_growth_factor = 0.15
 				political_power_gain = -0.25
+			}
+		}
+		CAL_federal_support = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				political_power_gain = -0.15
+			}
+		}
+		CAL_worker_safty_ensured = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.25
+			}
+		}
+		CAL_holding_unsafe_companies_accountable = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = -0.1
+				income_growth_factor = 0.25
+				consumer_goods_factor = -0.25
+			}
+		}
+		CAL_anti_lobbying_effort = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			modifier = {
+				safety_laws_cost_factor = -0.15
+				welfare_laws_cost_factor = -0.15
+				economy_cost_factor = -0.15
+			}
+		}
+		CAL_ai_drones = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					instant = yes
+					build_cost_ic = 0.15
+					air_attack = 0.15
+				}
+			}
+		}	
+		CAL_human_drones = {
+			picture = APA_mechanized
+			allowed = {
+				original_tag = CAL
+			}
+			equipment_bonus = {
+				guided_missile_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
 			}
 		}		
 		#The Eco Tree Dynamic Modifier
@@ -390,6 +457,97 @@ ideas = {
             removal_cost = -1
             modifier = {
 				consumer_goods_factor = 0.15
+            }
+        }
+        CAL_focus_regulate_corporations_idea = {
+            name = CAL_eco_idea
+            picture = GFX_idea_CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                income_growth_factor = -0.05
+				business_value_factor = 0.05
+				production_factory_max_efficiency_factor = -0.05
+				consumer_goods_factor = -0.1
+            }
+        }		
+        CAL_focus_fund_local_industry_idea = {
+            name = CAL_eco_idea
+            picture = GFX_idea_CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				consumer_goods_factor = -0.05
+            }
+        }
+        CAL_focus_let_palantir_burn_idea = {
+            name = CAL_eco_idea
+            picture = GFX_idea_CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+                research_speed_factor = -0.05
+            }
+        }
+        CAL_focus_threaten_corporations_idea = {
+            name = CAL_eco_idea
+            picture = GFX_idea_CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+				consumer_goods_factor = -0.1
+				business_value_factor = 0.15
+            }
+        }	
+        CAL_focus_convert_computer_factories_idea = {
+            name = CAL_eco_idea
+            picture = GFX_idea_CAL_quelling_inferno
+            traits = {
+                ZZZ_blank_idea_trait
+            }
+            allowed = {
+                always = no
+            }
+            allowed_civil_war = {
+                always = yes
+            }
+            removal_cost = -1
+            modifier = {
+				conversion_cost_civ_to_mil_factor = -0.15
             }
         }		
     }

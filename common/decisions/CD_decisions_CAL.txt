@@ -42,6 +42,45 @@ debug_decisions = {
 			}
 		}
 	}
+	CAL_unite_california_setup = {
+		allowed = {
+			is_debug = yes
+		}	
+		visible = {
+			is_debug = yes
+			tag = CAL
+		}	
+		complete_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 378
+						state = 1089
+						state = 950
+						state = 948
+						state = 947
+						state = 942
+						state = 941
+						state = 954
+						state = 949
+						state = 932
+						state = 1039
+						state = 943
+						state = 1040
+						state = 944
+						state = 953
+						state = 945
+						state = 1298
+						state = 930
+						state = 946
+						state = 952
+					    state = 951
+					}				
+				}
+				transfer_state_to = CAL
+			}
+		}
+	}	
 }
 
 USA_second_american_civil_war_category = {
@@ -659,12 +698,163 @@ CAL_cali_legislature = {
 }
 
 CAL_economy_decisions = {
-	CAL_economy_decisions_test = {
+	CAL_ensure_worker_safety = {
 		allowed = {
 		}	
 		visible = {
 		}	
 		complete_effect = {
+			#This decision will start a mission where the player searches Cali states (with Mils) for possible worker hazards (this is random). If found, you gain a ton of liquidy, pp, and civ goods, but lose Mil Construction speed
+			activate_mission = CAL_find_hazards_timeout
+			hidden_effect = {
+				set_country_flag = CAL_CD_looking_for_hazards
+				random_owned_state = {
+					limit = {
+						OR = {
+							state = 378
+							state = 1089
+							state = 950
+							state = 948
+							state = 947
+							state = 942
+							state = 941
+							state = 954
+							state = 949
+							state = 932
+							state = 1039
+							state = 943
+							state = 1040
+							state = 944
+							state = 953
+							state = 945
+							state = 1298
+							state = 930
+							state = 946
+							state = 952
+							state = 951
+						}				
+					}
+					set_state_flag = CD_CAL_issue_is_here
+				}
+			}
 		}
 	}
+	CAL_find_hazards_timeout = {
+		icon = GFX_decision_border_war
+		activation = {
+			always = no
+		}
+		available = {
+			has_country_flag = CD_CAL_found_a_hazard
+		}
+		cancel_if_not_visible = no
+		is_good = no
+		selectable_mission = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			add_timed_idea = {
+				idea = CAL_holding_unsafe_companies_accountable
+				days = 50
+			}
+			clr_country_flag = CAL_CD_looking_for_hazards	
+			clr_country_flag = CD_CAL_found_a_hazard
+			clr_country_flag = CD_currently_looking_for_issue_trigger
+			every_state = {
+				limit = {
+					has_state_flag = CD_CAL_issue_is_here
+				}
+				clr_state_flag = CD_CAL_issue_is_here
+			}
+		}
+		timeout_effect = {
+			add_timed_idea = {
+				idea = CAL_worker_safty_ensured
+				days = 50
+			}
+			clr_country_flag = CAL_CD_looking_for_hazards
+			clr_country_flag = CD_CAL_found_a_hazard
+			clr_country_flag = CD_currently_looking_for_issue_trigger
+			every_state = {
+				limit = {
+					has_state_flag = CD_CAL_issue_is_here
+				}
+				clr_state_flag = CD_CAL_issue_is_here
+			}			
+		}
+	}
+	CAL_check_state_for_issue = {
+		state_target = yes
+		cost = 10
+		days_remove = 5
+		days_re_enable = 10
+		target_root_trigger = {
+			tag = CAL
+		}	
+		target_trigger = {
+			FROM = {
+				is_owned_by = CAL
+				OR = {
+					state = 378
+					state = 1089
+					state = 950
+					state = 948
+					state = 947
+					state = 942
+					state = 941
+					state = 954
+					state = 949
+					state = 932
+					state = 1039
+					state = 943
+					state = 1040
+					state = 944
+					state = 953
+					state = 945
+					state = 1298
+					state = 930
+					state = 946
+					state = 952
+					state = 951
+				}
+			}
+		}	
+		on_map_mode = map_and_decisions_view
+		
+		available = {
+			has_country_flag = CAL_CD_looking_for_hazards
+			NOT = {
+				has_country_flag = CD_currently_looking_for_issue_trigger
+			}
+		}
+		visible = {
+			has_country_flag = CAL_CD_looking_for_hazards
+		}
+		remove_effect = {
+			clr_country_flag = CD_currently_looking_for_issue_trigger
+		}
+		complete_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						FROM = {
+							has_state_flag = CD_CAL_issue_is_here
+						}
+					}
+					owner = {
+						set_country_flag = CD_CAL_found_a_hazard
+					}
+				}			
+			}
+			custom_effect_tooltip = "We will look for possible worker hazards in this state"
+			hidden_effect = {
+				set_country_flag = CD_currently_looking_for_issue_trigger
+			}
+		}
+		
+		icon = generic_police_action
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}	
 }

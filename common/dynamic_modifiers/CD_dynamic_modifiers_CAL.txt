@@ -34,4 +34,18 @@ CAL_eco_idea = {
 	production_speed_arms_factory_factor = CAL_eco_idea_production_speed_arms_factory_factor_var
 	business_value_factor = CAL_eco_idea_business_value_factor_var
 	personal_value_factor = CAL_eco_idea_personal_value_factor_var
+	conversion_cost_civ_to_mil_factor = CAL_eco_idea_conversion_cost_civ_to_mil_factor_var
+}
+
+#For Provide Refuge and State Industry First
+CAL_timed_state_development_buff = {
+	icon = GFX_idea_USB_quelled_civilian_unrest
+	enable = {
+		has_country_flag = CAL_timed_state_development_buff_trigger
+	}
+	local_factories = 0.05
+	local_resource_gain_efficiency_per_infrastructure = 0.02
+	local_resources = 0.03
+	state_production_speed_industrial_complex_factor = 0.25
+	state_repair_speed_industrial_complex_factor = 0.35
 }

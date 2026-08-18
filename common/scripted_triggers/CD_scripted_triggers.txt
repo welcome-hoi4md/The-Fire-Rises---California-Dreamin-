@@ -1,0 +1,90 @@
+has_united_california = {
+	custom_trigger_tooltip = {
+		tooltip = has_united_california_tt	
+		378 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		1089 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		950 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		948 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		947 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		942 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		941 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		954 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		949 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		932 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		1039 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		943 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		1040 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		944 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		953 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		945 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		1298 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		930 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		946 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		952 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}
+		951 = {
+			is_controlled_by_ROOT_or_ally = yes
+		}		
+	}
+}
+#All of Cali States (for easy copy/paste)
+#378
+#1089
+#950
+#948
+#947
+#942
+#941
+#954
+#949
+#932
+#1039
+#943
+#1040
+#944
+#953
+#945
+#1298
+#930
+#946
+#952
+#951
