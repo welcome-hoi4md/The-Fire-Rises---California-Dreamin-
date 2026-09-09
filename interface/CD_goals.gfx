@@ -183,4 +183,12 @@ spriteTypes = {
 		name = "GFX_focus_CAL_finish_military_reform"
 		texturefile = "gfx/interface/goals/CAL/CAL_finish_military_reform.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_CAL_civilian_surveillance"
+		texturefile = "gfx/interface/goals/CAL/CAL_civilian_surveillance.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_CAL_tesla_negotiations"
+		texturefile = "gfx/interface/goals/CAL/CAL_tesla_negotiations.png"
+	}
 }

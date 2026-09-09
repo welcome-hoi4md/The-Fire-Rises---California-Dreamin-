@@ -119,8 +119,8 @@ if = {
 }
 
 add_ideas = {
-	high_interest_rates
-	higher_safety
+	medium_interest_rates
+	medium_safety
 	high_female_service
 	high_supervision
 	medium_racial_integration
@@ -131,7 +131,7 @@ add_ideas = {
 	higher_farming
 	low_poverty
 	higher_industry
-	higher_academic
+	high_academic
 	higher_military
 	medium_society
 }
